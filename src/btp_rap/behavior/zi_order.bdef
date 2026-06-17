@@ -1,0 +1,35 @@
+managed implementation in class zbp_i_order unique;
+strict ( 2 );
+with draft;
+
+define behavior for ZI_Order alias SalesOrder
+persistent table zfl_order
+draft table zfl_d_order
+lock master
+authorization master ( instance )
+etag master LastChangedAt
+{
+  create;
+  update;
+  delete;
+
+  association _Items { create; with draft; }
+  association _Invoice { create; with draft; }
+
+  determination calculateTotals on modify { field NetAmount, TaxAmount; }
+
+  action releaseOrder result [1] $self;
+  action createInvoice result [1] ZI_Invoice;
+}
+
+define behavior for ZI_OrderItem alias SalesOrderItem
+persistent table zfl_order_item
+lock dependent by _Order
+authorization dependent by _Order
+{
+  update;
+  delete;
+  field ( readonly ) OrderID;
+  association _Order;
+}
+

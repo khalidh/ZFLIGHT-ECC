@@ -1,0 +1,21 @@
+@Metadata.layer: #CORE
+annotate view ZC_Order with {
+  @UI.facet: [
+    { id: 'Order', purpose: #STANDARD, type: #IDENTIFICATION_REFERENCE, label: 'Order', position: 10 },
+    { id: 'Items', purpose: #STANDARD, type: #LINEITEM_REFERENCE, label: 'Items', position: 20, targetElement: '_Items' },
+    { id: 'Invoice', purpose: #STANDARD, type: #LINEITEM_REFERENCE, label: 'Invoice', position: 30, targetElement: '_Invoice' }
+  ]
+  @UI.lineItem: [{ position: 10 }]
+  @UI.selectionField: [{ position: 10 }]
+  OrderID;
+
+  @UI.lineItem: [{ position: 20 }]
+  BookingID;
+
+  @UI.lineItem: [{ position: 30 }]
+  OrderStatus;
+
+  @UI.lineItem: [{ position: 40 }]
+  GrossAmount;
+}
+

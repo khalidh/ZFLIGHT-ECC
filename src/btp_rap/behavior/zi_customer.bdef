@@ -1,0 +1,20 @@
+managed implementation in class zbp_i_customer unique;
+strict ( 2 );
+with draft;
+
+define behavior for ZI_Customer alias Customer
+persistent table zfl_customer
+draft table zfl_d_customer
+lock master
+authorization master ( instance )
+etag master LastChangedAt
+{
+  create;
+  update;
+  delete;
+
+  association _Bookings { create; with draft; }
+
+  validation validateEmail on save { field EmailAddress; }
+}
+

@@ -1,0 +1,12 @@
+001 Action & non autorisee pour l'objet Z_FLIGHT.
+002 Vol & & & introuvable.
+003 Reservation & introuvable.
+004 Client & introuvable.
+005 Capacite insuffisante pour le vol & & &.
+006 Statut & incompatible avec action &.
+007 Verrou impossible sur objet &.
+008 Montant invalide.
+009 Creation & effectuee.
+010 Annulation & effectuee.
+011 Erreur technique &: &.
+

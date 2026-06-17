@@ -1,0 +1,32 @@
+managed implementation in class zbp_i_invoice unique;
+strict ( 2 );
+with draft;
+
+define behavior for ZI_Invoice alias Invoice
+persistent table zfl_invoice
+draft table zfl_d_invoice
+lock master
+authorization master ( instance )
+etag master LastChangedAt
+{
+  create;
+  update;
+  delete;
+
+  association _Payments { create; with draft; }
+
+  action cancelInvoice result [1] $self;
+  action registerPayment parameter ZI_PaymentInput result [1] ZI_Payment;
+}
+
+define behavior for ZI_Payment alias Payment
+persistent table zfl_payment
+lock dependent by _Invoice
+authorization dependent by _Invoice
+{
+  update;
+  delete;
+  field ( readonly ) InvoiceID;
+  association _Invoice;
+}
+
