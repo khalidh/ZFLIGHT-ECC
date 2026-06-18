@@ -34,7 +34,7 @@ Recommandation: adopter une migration progressive par domaines metier. Les lectu
 
 | Domaine | Etat ECC | Etat BTP cible | Maturite |
 |---|---|---|---|
-| Modele de donnees | Tables Z* documentees, relations et index identifies | Tables `ZFL_*` generees | Bon socle, mapping a valider champ par champ |
+| Modele de donnees | Tables Z* documentees, relations et index identifies | Tables `ZF2_*` generees | Bon socle, mapping a valider champ par champ |
 | Logique metier | Classes ECC separees de la presentation | Helpers RAP initiaux | Reutilisation partielle possible, adaptation ABAP Cloud requise |
 | UI | SAP GUI, Dynpro, ALV | Fiori Elements via projections et metadata | Refonte necessaire |
 | API | Function Modules proceduraux | OData V4 UI/API | Refonte contractuelle necessaire |
@@ -47,11 +47,11 @@ Recommandation: adopter une migration progressive par domaines metier. Les lectu
 
 | Objet ECC | Cible SAP BTP | Strategie recommandee |
 |---|---|---|
-| `ZSCARR`, `ZSPFLI`, `ZSFLIGHT` | `ZFL_CARRIER`, `ZFL_CONNECTION`, `ZFL_FLIGHT` | Migrer vers tables ABAP Cloud et CDS interface/projection |
-| `ZSCUSTOM`, `ZSBOOK` | `ZFL_CUSTOMER`, `ZFL_BOOKING` | Creer BO RAP `Customer` et `Booking` avec validations |
-| `ZSORDER`, `ZSORDER_ITEM` | `ZFL_ORDER`, `ZFL_ORDER_ITEM` | Modeliser en composition RAP depuis booking/order |
-| `ZSINVOICE`, `ZSPAYMENT` | `ZFL_INVOICE`, `ZFL_PAYMENT` | Actions RAP pour facture et paiement |
-| `ZSSTATUS_HIST` | `ZFL_STATUS_HIST` | Determination/action de journalisation centralisee |
+| `ZSCARR`, `ZSPFLI`, `ZSFLIGHT` | `ZF2_CARRIER`, `ZF2_CONNECTION`, `ZF2_FLIGHT` | Migrer vers tables ABAP Cloud et CDS interface/projection |
+| `ZSCUSTOM`, `ZSBOOK` | `ZF2_CUSTOMER`, `ZF2_BOOKING` | Creer BO RAP `Customer` et `Booking` avec validations |
+| `ZSORDER`, `ZSORDER_ITEM` | `ZF2_ORDER`, `ZF2_ORDER_ITEM` | Modeliser en composition RAP depuis booking/order |
+| `ZSINVOICE`, `ZSPAYMENT` | `ZF2_INVOICE`, `ZF2_PAYMENT` | Actions RAP pour facture et paiement |
+| `ZSSTATUS_HIST` | `ZF2_STATUS_HIST` | Determination/action de journalisation centralisee |
 | Search Helps DDIC | Value Help CDS | Reprendre les aides principales: compagnie, connexion, vol, client |
 | ALV reports | Fiori Elements List Reports | Remplacer les variantes ALV par filtres, facets, annotations UI |
 | Module Pool `SAPMZFLIGHT` | Fiori Elements Object Pages | Reconcevoir les ecrans comme objets metier navigables |
@@ -76,7 +76,7 @@ Actions:
 
 ### 2. Modele de donnees et persistance
 
-Constat: le modele ECC est bien documente et la cible `ZFL_*` existe. Le risque principal se situe dans la correspondance exacte des cles, statuts, devises, quantites, timestamps, champs d'audit et associations.
+Constat: le modele ECC est bien documente et la cible `ZF2_*` existe. Le risque principal se situe dans la correspondance exacte des cles, statuts, devises, quantites, timestamps, champs d'audit et associations.
 
 Impact: un ecart de type, de cle ou de statut peut casser les associations CDS, les value helps, les actions RAP et les reprises de donnees.
 
@@ -112,11 +112,11 @@ Actions:
 - Mapper chaque report ALV vers une List Report.
 - Mapper `SAPMZFLIGHT` vers une ou plusieurs Object Pages.
 - Definir les filtres obligatoires, variantes, colonnes KPI et actions en barre d'outil.
-- Verifier les metadata extensions `ZC_*_UI`.
+- Verifier les metadata extensions `ZF2_C_*_UI`.
 
 ### 5. API et integrations
 
-Constat: l'API ECC est une facade Function Modules. La cible propose `ZAPI_FLIGHT_BOOKING` en OData V4 Web API.
+Constat: l'API ECC est une facade Function Modules. La cible propose `ZF2_API_FLIGHT_BOOKING` en OData V4 Web API.
 
 Impact: les consommateurs RFC ou legacy ne peuvent pas etre bascules sans contrat API explicite. Les erreurs, statuts HTTP, payloads et autorisations changent.
 
@@ -169,7 +169,7 @@ Actions:
 
 ### P0 - Fondations
 
-- Valider la matrice champ a champ ECC vers `ZFL_*`.
+- Valider la matrice champ a champ ECC vers `ZF2_*`.
 - Activer les tables, CDS interface/projection et DCL en environnement BTP.
 - Corriger les artifacts incomplets: draft tables, behavior pools vides, classes helper minimales.
 - Definir personas IAM et catalogues.
@@ -179,12 +179,12 @@ Actions:
 - Finaliser BO `Booking`: creation, validation capacite, pricing, confirmation, annulation.
 - Finaliser BO `Order`: creation depuis reservation, postes, statuts.
 - Finaliser BO `Invoice`: creation facture, paiement, cloture.
-- Implementer journalisation `ZFL_STATUS_HIST`.
+- Implementer journalisation `ZF2_STATUS_HIST`.
 
 ### P2 - UI et API
 
-- Publier `ZUI_FLIGHT_MANAGE` et `ZUI_BOOKING_MANAGE` en OData V4 UI.
-- Publier `ZAPI_FLIGHT_BOOKING` en OData V4 Web API.
+- Publier `ZF2_UI_FLIGHT_MANAGE` et `ZF2_UI_BOOKING_MANAGE` en OData V4 UI.
+- Publier `ZF2_API_FLIGHT_BOOKING` en OData V4 Web API.
 - Remplacer les ALV par List Reports.
 - Remplacer le module pool par Object Pages et actions RAP.
 
@@ -203,7 +203,7 @@ Actions:
 | 1. Read-only | Exposer referentiels et listes | Tables, CDS, List Reports read-only | Donnees consultables en Fiori |
 | 2. Booking | Migrer reservation | BO `Booking`, actions, validations, tests | Creation/confirmation/annulation OK |
 | 3. SD simplifie | Migrer commande, facture, paiement | BO `Order`, `Invoice`, `Payment` | Flux bout en bout OK |
-| 4. API | Publier integration | `ZAPI_FLIGHT_BOOKING`, contrats, smoke tests | Consommateurs pilotes valides |
+| 4. API | Publier integration | `ZF2_API_FLIGHT_BOOKING`, contrats, smoke tests | Consommateurs pilotes valides |
 | 5. Migration donnees | Charger et reconcilier | Procedure ETL, rapport reconciliation | Ecarts controles et acceptes |
 | 6. Cutover | Basculer usages | Plan cutover, roles, support | ECC en lecture seule ou decommissionne |
 

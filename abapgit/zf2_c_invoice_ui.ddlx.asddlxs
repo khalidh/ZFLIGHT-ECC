@@ -1,0 +1,23 @@
+@Metadata.layer: #CORE
+annotate view ZF2_C_Invoice with {
+  @UI.facet: [
+    { id: 'Invoice', purpose: #STANDARD, type: #IDENTIFICATION_REFERENCE, label: 'Invoice', position: 10 },
+    { id: 'Payments', purpose: #STANDARD, type: #LINEITEM_REFERENCE, label: 'Payments', position: 20, targetElement: '_Payments' }
+  ]
+  @UI.lineItem: [{ position: 10 }]
+  @UI.selectionField: [{ position: 10 }]
+  InvoiceID;
+
+  @UI.lineItem: [{ position: 20 }]
+  OrderID;
+
+  @UI.lineItem: [{ position: 30 }]
+  InvoiceStatus;
+
+  @UI.lineItem: [{ position: 40 }]
+  TotalAmount;
+
+  @UI.lineItem: [{ position: 50 }]
+  PaidAmount;
+}
+

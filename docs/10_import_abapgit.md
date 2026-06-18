@@ -24,26 +24,26 @@ https://github.com/khalidh/ZFLIGHT-ECC.git
 
 ## Ordre d'activation attendu
 
-1. Tables et definitions DDLS `ZFL_*`.
-2. CDS interface `ZI_*`.
-3. CDS projection `ZC_*`.
-4. Behavior definitions `ZI_*` et `ZC_*`.
-5. Classes `ZBP_*` et helpers `ZCL_*`.
-6. Services `ZUI_*` et `ZAPI_*`.
-7. Metadata extensions `ZC_*_UI`.
-8. DCL `ZFLIGHT_RAP_ACCESS`.
+1. Tables et definitions DDLS `ZF2_*`.
+2. CDS interface `ZF2_I_*`.
+3. CDS projection `ZF2_C_*`.
+4. Behavior definitions `ZF2_I_*` et projections `ZF2_C_*`.
+5. Classes `ZF2_BP_*` et helpers `ZF2_CL_*`.
+6. Services `ZF2_UI_*` et `ZF2_API_*`.
+7. Metadata extensions `ZF2_C_*_UI`.
+8. DCL `ZF2_RAP_ACCESS`.
 
 ## Point d'attention
 
-Les tables persistantes `ZFL_*` sont serialisees comme objets abapGit `TABL`. Si un import precedent a cree des objets inactifs `DDLS ZFL_*`, il faut les supprimer avant de relancer le pull, car ces anciens objets ne sont pas les tables attendues.
+Les tables persistantes `ZF2_*` sont serialisees comme objets abapGit `TABL`. Si un import precedent a cree des objets inactifs `DDLS ZFL_*` ou `DDLS ZF2_*`, il faut les supprimer avant de relancer le pull, car ces anciens objets ne sont pas les tables attendues.
 
-Si ADT affiche l'erreur `Gerez et sauvegardez les options techniques pour ZFL_*`, ouvrir la table indiquee et sauvegarder les options techniques suivantes:
+Si ADT affiche l'erreur `Gerez et sauvegardez les options techniques pour ZF2_*`, ouvrir la table indiquee et sauvegarder les options techniques suivantes:
 
 - Classe de donnees: `APPL0`.
 - Categorie de taille: `0`.
 - Buffering: `Not allowed` / `N`.
 
-Cette correction peut apparaitre table par table pendant l'activation (`ZFL_BOOKING`, puis `ZFL_CARRIER`, etc.) lorsque des objets ont deja ete crees partiellement dans le systeme. Si le package ne contient pas de travail local a conserver, le plus propre est de supprimer les objets `ZFL_*` inactifs puis de refaire un pull abapGit depuis GitHub.
+Cette correction peut apparaitre table par table pendant l'activation (`ZF2_BOOKING`, puis `ZF2_CARRIER`, etc.) lorsque des objets ont deja ete crees partiellement dans le systeme. Si le package ne contient pas de travail local a conserver, le plus propre est de supprimer les objets `ZFL_*` et `ZF2_*` inactifs puis de refaire un pull abapGit depuis GitHub.
 
 Les behavior definitions actuelles utilisent `with draft` et referencent des draft tables `zfl_d_*`.
 

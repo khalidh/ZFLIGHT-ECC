@@ -2,8 +2,8 @@
 
 ## Unit Tests
 
-- `ZCL_FLIGHT_PRICING_TEST`: pricing and tax calculation.
-- Add validation tests for `ZCL_FLIGHT_VALIDATION`.
+- `ZF2_CL_FLIGHT_PRICING_TEST`: pricing and tax calculation.
+- Add validation tests for `ZF2_CL_FLIGHT_VALIDATION`.
 - Add status transition tests for booking, order and invoice actions.
 
 ## Behavior Tests
@@ -17,10 +17,10 @@
 
 ## OData Smoke Tests
 
-- Publish `ZUI_FLIGHT_MANAGE_O4`.
+- Publish `ZF2_UI_FLIGHT_MANAGE_O4`.
 - Open preview for `Flights`.
-- Publish `ZUI_BOOKING_MANAGE_O4`.
+- Publish `ZF2_UI_BOOKING_MANAGE_O4`.
 - Execute `confirmBooking` and `createOrder`.
-- Publish `ZAPI_FLIGHT_BOOKING_O4`.
+- Publish `ZF2_API_FLIGHT_BOOKING_O4`.
 - Test read-only external API access with communication arrangement.
 

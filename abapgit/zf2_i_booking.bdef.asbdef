@@ -1,0 +1,28 @@
+managed implementation in class zf2_bp_i_booking unique;
+strict ( 2 );
+with draft;
+
+define behavior for ZF2_I_Booking alias Booking
+persistent table zf2_booking
+draft table zfl_d_booking
+lock master
+authorization master ( instance )
+etag master LastChangedAt
+{
+  create;
+  update;
+  delete;
+
+  field ( readonly ) LastChangedAt, LocalLastChangedAt, TotalAmount, TaxAmount;
+
+  association _Order { create; with draft; }
+
+  validation validateFlightCapacity on save { field CarrierID, ConnectionID, FlightDate; }
+  validation validateCustomer on save { field CustomerID; }
+  determination calculatePrice on modify { field CarrierID, ConnectionID, FlightDate, SeatClass; }
+
+  action confirmBooking result [1] $self;
+  action cancelBooking parameter ZF2_BookingCancelParameter result [1] $self;
+  action createOrder result [1] ZF2_I_Order;
+}
+

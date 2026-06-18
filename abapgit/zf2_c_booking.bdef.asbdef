@@ -1,0 +1,15 @@
+projection;
+strict ( 2 );
+use draft;
+
+define behavior for ZF2_C_Booking alias Booking
+{
+  use create;
+  use update;
+  use delete;
+  use action confirmBooking;
+  use action cancelBooking;
+  use action createOrder;
+  use association _Order { create; with draft; }
+}
+

@@ -1,8 +1,0 @@
-@EndUserText.label: 'Flight Booking Public API'
-define service ZAPI_FLIGHT_BOOKING {
-  expose ZC_Flight as Flights;
-  expose ZC_Booking as Bookings;
-  expose ZC_Order as Orders;
-  expose ZC_Invoice as Invoices;
-}
-

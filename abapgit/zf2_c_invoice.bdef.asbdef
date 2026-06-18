@@ -1,0 +1,21 @@
+projection;
+strict ( 2 );
+use draft;
+
+define behavior for ZF2_C_Invoice alias Invoice
+{
+  use create;
+  use update;
+  use delete;
+  use action cancelInvoice;
+  use action registerPayment;
+  use association _Payments { create; with draft; }
+}
+
+define behavior for ZF2_C_Payment alias Payment
+{
+  use update;
+  use delete;
+  use association _Invoice;
+}
+

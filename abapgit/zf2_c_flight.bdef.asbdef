@@ -1,0 +1,13 @@
+projection;
+strict ( 2 );
+use draft;
+
+define behavior for ZF2_C_Flight alias Flight
+{
+  use create;
+  use update;
+  use delete;
+  use action recalculateAvailability;
+  use association _Bookings { create; with draft; }
+}
+

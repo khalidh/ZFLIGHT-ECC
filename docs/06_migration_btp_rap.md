@@ -48,23 +48,23 @@ Les objets cible sont disponibles dans [src/btp_rap](../src/btp_rap).
 
 ### Tables persistantes
 
-- `ZFL_CARRIER`
-- `ZFL_CONNECTION`
-- `ZFL_FLIGHT`
-- `ZFL_CUSTOMER`
-- `ZFL_BOOKING`
-- `ZFL_ORDER`
-- `ZFL_ORDER_ITEM`
-- `ZFL_INVOICE`
-- `ZFL_PAYMENT`
-- `ZFL_STATUS_HIST`
+- `ZF2_CARRIER`
+- `ZF2_CONNECTION`
+- `ZF2_FLIGHT`
+- `ZF2_CUSTOMER`
+- `ZF2_BOOKING`
+- `ZF2_ORDER`
+- `ZF2_ORDER_ITEM`
+- `ZF2_INVOICE`
+- `ZF2_PAYMENT`
+- `ZF2_STATUS_HIST`
 
 ### CDS et services
 
-- Interface CDS `ZI_*` dans `src/btp_rap/cds/interface`.
-- Projection CDS `ZC_*` dans `src/btp_rap/cds/projection`.
-- Behavior definitions `ZI_*` et projections `ZC_*` dans `src/btp_rap/behavior`.
-- Services OData V4 `ZUI_FLIGHT_MANAGE`, `ZUI_BOOKING_MANAGE`, `ZAPI_FLIGHT_BOOKING`.
+- Interface CDS `ZF2_I_*` dans `src/btp_rap/cds/interface`.
+- Projection CDS `ZF2_C_*` dans `src/btp_rap/cds/projection`.
+- Behavior definitions `ZF2_I_*` et projections `ZF2_C_*` dans `src/btp_rap/behavior`.
+- Services OData V4 `ZF2_UI_FLIGHT_MANAGE`, `ZF2_UI_BOOKING_MANAGE`, `ZF2_API_FLIGHT_BOOKING`.
 
 ### UI, securite et tests
 

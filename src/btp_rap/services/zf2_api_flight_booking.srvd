@@ -1,0 +1,7 @@
+@EndUserText.label: 'Flight Booking Public API'
+define service ZF2_API_FLIGHT_BOOKING {
+  expose ZF2_C_Flight as Flights;
+  expose ZF2_C_Booking as Bookings;
+  expose ZF2_C_Order as Orders;
+  expose ZF2_C_Invoice as Invoices;
+}

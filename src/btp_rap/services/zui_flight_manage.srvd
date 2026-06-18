@@ -1,8 +1,0 @@
-@EndUserText.label: 'Flight Management UI Service'
-define service ZUI_FLIGHT_MANAGE {
-  expose ZC_FlightCarrier as Carriers;
-  expose ZC_FlightConnection as Connections;
-  expose ZC_Flight as Flights;
-  expose ZC_Customer as Customers;
-}
-

@@ -1,0 +1,11 @@
+@EndUserText.label: 'Flight RAP access control'
+@MappingRole: true
+define role ZF2_RAP_ACCESS {
+  grant select on ZF2_I_FlightCarrier where ( 1 = 1 );
+  grant select on ZF2_I_FlightConnection where ( 1 = 1 );
+  grant select on ZF2_I_Flight where ( 1 = 1 );
+  grant select on ZF2_I_Customer where ( 1 = 1 );
+  grant select on ZF2_I_Booking where ( 1 = 1 );
+  grant select on ZF2_I_Order where ( 1 = 1 );
+  grant select on ZF2_I_Invoice where ( 1 = 1 );
+}

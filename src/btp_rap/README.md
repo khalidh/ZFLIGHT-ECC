@@ -9,8 +9,8 @@ The ECC implementation remains under `src/abap/`. The objects here are RAP-orien
 | Folder | Content |
 |---|---|
 | `tables/` | Persistent tables for ABAP Cloud |
-| `cds/interface/` | Interface CDS view entities `ZI_*` |
-| `cds/projection/` | Projection CDS view entities `ZC_*` |
+| `cds/interface/` | Interface CDS view entities `ZF2_I_*` |
+| `cds/projection/` | Projection CDS view entities `ZF2_C_*` |
 | `behavior/` | Behavior definitions and behavior pools |
 | `services/` | OData V4 service definitions and binding notes |
 | `metadata/` | Fiori Elements UI metadata extensions |
@@ -35,45 +35,44 @@ The ECC implementation remains under `src/abap/`. The objects here are RAP-orien
 
 Persistent tables:
 
-- `ZFL_CARRIER`
-- `ZFL_CONNECTION`
-- `ZFL_FLIGHT`
-- `ZFL_CUSTOMER`
-- `ZFL_BOOKING`
-- `ZFL_ORDER`
-- `ZFL_ORDER_ITEM`
-- `ZFL_INVOICE`
-- `ZFL_PAYMENT`
-- `ZFL_STATUS_HIST`
+- `ZF2_CARRIER`
+- `ZF2_CONNECTION`
+- `ZF2_FLIGHT`
+- `ZF2_CUSTOMER`
+- `ZF2_BOOKING`
+- `ZF2_ORDER`
+- `ZF2_ORDER_ITEM`
+- `ZF2_INVOICE`
+- `ZF2_PAYMENT`
+- `ZF2_STATUS_HIST`
 
 Interface CDS:
 
-- `ZI_FlightCarrier`
-- `ZI_FlightConnection`
-- `ZI_Flight`
-- `ZI_Customer`
-- `ZI_Booking`
-- `ZI_Order`
-- `ZI_OrderItem`
-- `ZI_Invoice`
-- `ZI_Payment`
-- `ZI_StatusHistory`
+- `ZF2_I_FlightCarrier`
+- `ZF2_I_FlightConnection`
+- `ZF2_I_Flight`
+- `ZF2_I_Customer`
+- `ZF2_I_Booking`
+- `ZF2_I_Order`
+- `ZF2_I_OrderItem`
+- `ZF2_I_Invoice`
+- `ZF2_I_Payment`
+- `ZF2_I_StatusHistory`
 
 Projection CDS:
 
-- `ZC_FlightCarrier`
-- `ZC_FlightConnection`
-- `ZC_Flight`
-- `ZC_Customer`
-- `ZC_Booking`
-- `ZC_Order`
-- `ZC_OrderItem`
-- `ZC_Invoice`
-- `ZC_Payment`
+- `ZF2_C_FlightCarrier`
+- `ZF2_C_FlightConnection`
+- `ZF2_C_Flight`
+- `ZF2_C_Customer`
+- `ZF2_C_Booking`
+- `ZF2_C_Order`
+- `ZF2_C_OrderItem`
+- `ZF2_C_Invoice`
+- `ZF2_C_Payment`
 
 Services:
 
-- `ZUI_FLIGHT_MANAGE`
-- `ZUI_BOOKING_MANAGE`
-- `ZAPI_FLIGHT_BOOKING`
-
+- `ZF2_UI_FLIGHT_MANAGE`
+- `ZF2_UI_BOOKING_MANAGE`
+- `ZF2_API_FLIGHT_BOOKING`
