@@ -37,6 +37,14 @@ https://github.com/khalidh/ZFLIGHT-ECC.git
 
 Les tables persistantes `ZFL_*` sont serialisees comme objets abapGit `TABL`. Si un import precedent a cree des objets inactifs `DDLS ZFL_*`, il faut les supprimer avant de relancer le pull, car ces anciens objets ne sont pas les tables attendues.
 
+Si ADT affiche l'erreur `Gerez et sauvegardez les options techniques pour ZFL_*`, ouvrir la table indiquee et sauvegarder les options techniques suivantes:
+
+- Classe de donnees: `APPL0`.
+- Categorie de taille: `0`.
+- Buffering: `Not allowed` / `N`.
+
+Cette correction peut apparaitre table par table pendant l'activation (`ZFL_BOOKING`, puis `ZFL_CARRIER`, etc.) lorsque des objets ont deja ete crees partiellement dans le systeme. Si le package ne contient pas de travail local a conserver, le plus propre est de supprimer les objets `ZFL_*` inactifs puis de refaire un pull abapGit depuis GitHub.
+
 Les behavior definitions actuelles utilisent `with draft` et referencent des draft tables `zfl_d_*`.
 
 Si l'activation bloque sur ces objets, il faut soit:
