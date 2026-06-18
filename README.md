@@ -14,6 +14,7 @@ Le livrable est volontairement oriente ECC 6.0 / NetWeaver AS ABAP classique: DD
 - [docs/06_migration_btp_rap.md](docs/06_migration_btp_rap.md)
 - [docs/07_transactions_dynpro.md](docs/07_transactions_dynpro.md)
 - [docs/08_livrable_etapes.md](docs/08_livrable_etapes.md)
+- [docs/09_audit_migration_btp.md](docs/09_audit_migration_btp.md)
 - [src/abap/ddic/ZFLIGHT_DDIC_SPEC.md](src/abap/ddic/ZFLIGHT_DDIC_SPEC.md)
 - [src/abap/classes/](src/abap/classes)
 - [src/abap/function_groups/](src/abap/function_groups)
