@@ -1,10 +1,8 @@
 managed implementation in class zf2_bp_i_booking unique;
 strict ( 2 );
-with draft;
 
 define behavior for ZF2_I_Booking alias Booking
 persistent table zf2_booking
-draft table zfl_d_booking
 lock master
 authorization master ( instance )
 etag master LastChangedAt

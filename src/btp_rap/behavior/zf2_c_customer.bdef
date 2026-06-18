@@ -1,6 +1,5 @@
 projection;
 strict ( 2 );
-use draft;
 
 define behavior for ZF2_C_Customer alias Customer
 {

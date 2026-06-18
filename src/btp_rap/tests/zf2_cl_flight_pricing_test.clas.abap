@@ -1,5 +1,5 @@
 CLASS zf2_cl_flight_pricing_test DEFINITION
-  FINAL FOR TESTING
+  PUBLIC FINAL FOR TESTING
   DURATION SHORT
   RISK LEVEL HARMLESS.
   PRIVATE SECTION.
@@ -16,4 +16,3 @@ CLASS zf2_cl_flight_pricing_test IMPLEMENTATION.
       exp = CONV decfloat34( '120' ) ).
   ENDMETHOD.
 ENDCLASS.
-

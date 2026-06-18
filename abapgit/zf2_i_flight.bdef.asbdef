@@ -1,10 +1,8 @@
 managed implementation in class zf2_bp_i_flight unique;
 strict ( 2 );
-with draft;
 
 define behavior for ZF2_I_Flight alias Flight
 persistent table zf2_flight
-draft table zfl_d_flight
 lock master
 authorization master ( instance )
 etag master LastChangedAt
