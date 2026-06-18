@@ -1,0 +1,9 @@
+@EndUserText.label: 'Booking Management UI Service'
+define service ZUI_BOOKING_MANAGE {
+  expose ZC_Booking as Bookings;
+  expose ZC_Order as Orders;
+  expose ZC_OrderItem as OrderItems;
+  expose ZC_Invoice as Invoices;
+  expose ZC_Payment as Payments;
+}
+
