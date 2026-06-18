@@ -6,5 +6,4 @@ define behavior for ZF2_C_Invoice alias Invoice
   use create;
   use update;
   use delete;
-  use association _Payments;
 }

@@ -11,5 +11,4 @@ etag master LastChangedAt
   update;
   delete;
 
-  association _Payments;
 }
