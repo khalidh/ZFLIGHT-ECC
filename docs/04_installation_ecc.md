@@ -8,7 +8,7 @@
 
 ## Etapes
 
-1. Creer le package `ZFLIGHT_ECC`.
+1. Creer le package `ZFLIGHT-ECC2`.
 2. Creer la classe de messages `ZFLIGHT_MSG` dans SE91.
 3. Creer les domaines et data elements selon [ZFLIGHT_DDIC_SPEC.md](../src/abap/ddic/ZFLIGHT_DDIC_SPEC.md).
 4. Creer les tables transparentes, cles et foreign keys.
@@ -40,4 +40,3 @@ Activer SICF si necessaire:
 ```
 
 Les ALV bases sur `REUSE_ALV_GRID_DISPLAY` ont moins de dependances frontend et sont plus predictibles sous WebGUI.
-

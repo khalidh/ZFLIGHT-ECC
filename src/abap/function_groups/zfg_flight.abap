@@ -1,6 +1,6 @@
 FUNCTION-POOL zfg_flight.
 
-* Function group facade for ZFLIGHT_ECC.
+* Function group facade for ZFLIGHT-ECC2.
 * Create the function modules below in SE37 and paste the relevant forms.
 
 FUNCTION z_booking_create.
@@ -81,4 +81,3 @@ FUNCTION z_flight_get.
       RAISE not_found.
   ENDTRY.
 ENDFUNCTION.
-

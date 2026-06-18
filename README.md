@@ -1,4 +1,4 @@
-# ZFLIGHT_ECC
+# ZFLIGHT-ECC2
 
 Application pedagogique SAP ECC classique pour gerer un mini systeme de reservation aerienne avec extension SD simplifiee.
 

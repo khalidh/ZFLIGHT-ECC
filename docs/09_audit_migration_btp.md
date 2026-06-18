@@ -1,8 +1,8 @@
-# Audit de migration ZFLIGHT-ECC vers SAP BTP
+# Audit de migration ZFLIGHT-ECC2 vers SAP BTP
 
 ## Synthese executive
 
-`ZFLIGHT_ECC` est une application SAP ECC classique basee sur DDIC, SAP GUI, ALV, Function Modules, classes ABAP Objects, verrous explicites et transactions SE93. Le dossier contient deja une cible SAP BTP ABAP Environment orientee RAP/OData V4 dans `src/btp_rap`, avec tables persistantes, CDS, behavior definitions, services, metadata Fiori Elements, DCL/IAM, classes helper et plan de tests.
+`ZFLIGHT-ECC2` est une application SAP ECC classique basee sur DDIC, SAP GUI, ALV, Function Modules, classes ABAP Objects, verrous explicites et transactions SE93. Le dossier contient deja une cible SAP BTP ABAP Environment orientee RAP/OData V4 dans `src/btp_rap`, avec tables persistantes, CDS, behavior definitions, services, metadata Fiori Elements, DCL/IAM, classes helper et plan de tests.
 
 La migration est faisable, mais elle ne doit pas etre traitee comme un simple transport technique. Les objets de presentation SAP GUI, les Function Modules, les verrous ECC, les `COMMIT WORK`, les number ranges classiques et les controles d'autorisation doivent etre reconcus selon les contraintes ABAP Cloud, RAP, Fiori Elements et IAM.
 

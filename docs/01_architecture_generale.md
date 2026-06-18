@@ -2,7 +2,7 @@
 
 ## Objectif
 
-`ZFLIGHT_ECC` est une application SAP GUI ECC classique de reservation aerienne. Elle couvre la gestion des compagnies, connexions, vols, clients, reservations, commandes simplifiees, factures, paiements, tarification et historique de statuts.
+`ZFLIGHT-ECC2` est une application SAP GUI ECC classique de reservation aerienne. Elle couvre la gestion des compagnies, connexions, vols, clients, reservations, commandes simplifiees, factures, paiements, tarification et historique de statuts.
 
 L'application est concue comme un developpement ECC pre-RAP: aucun CDS, RAP, OData, Fiori, BTP, ABAP Cloud ou AMDP.
 
@@ -115,4 +115,3 @@ Points d'extension prevus:
 - SOAP via enterprise service ECC.
 - REST via ICF handler si necessaire.
 - Import/export CSV via reports batch.
-

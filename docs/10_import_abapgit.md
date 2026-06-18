@@ -18,7 +18,7 @@ https://github.com/khalidh/ZFLIGHT-ECC.git
 
 ## Parametres abapGit
 
-- Package cible: `ZFLIGHT_ECC` ou un package dedie `ZFLIGHT_RAP`.
+- Package cible: `ZFLIGHT-ECC2`.
 - Branch: `refs/heads/main`.
 - Folder logic: `FULL`.
 

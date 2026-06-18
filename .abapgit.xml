@@ -2,7 +2,7 @@
 <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
  <asx:values>
   <DATA>
-   <NAME>ZFLIGHT-ECC</NAME>
+   <NAME>ZFLIGHT-ECC2</NAME>
    <MASTER_LANGUAGE>F</MASTER_LANGUAGE>
    <STARTING_FOLDER>/abapgit/</STARTING_FOLDER>
    <FOLDER_LOGIC>FULL</FOLDER_LOGIC>

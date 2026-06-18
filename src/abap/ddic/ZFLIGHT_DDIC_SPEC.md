@@ -1,4 +1,4 @@
-# Specification DDIC ZFLIGHT_ECC
+# Specification DDIC ZFLIGHT-ECC2
 
 ## Domaines
 
@@ -138,4 +138,3 @@ Les tables `ZSORDER`, `ZSORDER_ITEM`, `ZSINVOICE`, `ZSINVOICE_ITEM`, `ZSPRICING`
 - `ZSH_BOOK`: `ZSBOOK-BOOKID`, client, vol, statut.
 - `ZSH_ORDER`: `ZSORDER-ORDERID`, client, statut.
 - `ZSH_INVOICE`: `ZSINVOICE-INVOICEID`, commande, statut.
-
