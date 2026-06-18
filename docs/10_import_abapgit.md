@@ -4,6 +4,7 @@
 
 Le dossier `abapgit/` contient une serialisation abapGit des objets RAP generes depuis `src/btp_rap`. La racine du depot contient `.abapgit.xml` avec:
 
+- `MASTER_LANGUAGE` = `F`
 - `STARTING_FOLDER` = `/abapgit/`
 - `FOLDER_LOGIC` = `FULL`
 
