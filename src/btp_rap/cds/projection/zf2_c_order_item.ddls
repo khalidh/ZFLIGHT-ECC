@@ -10,8 +10,8 @@ define view entity ZF2_C_OrderItem
       ConditionType,
       Description,
       Quantity,
+      QuantityUnit,
       Amount,
       CurrencyCode,
       _Order : redirected to parent ZF2_C_Order
 }
-

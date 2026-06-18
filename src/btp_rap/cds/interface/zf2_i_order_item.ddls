@@ -9,10 +9,11 @@ define view entity ZF2_I_OrderItem
   key item_no as ItemNo,
       condition_type as ConditionType,
       description as Description,
+      @Semantics.quantity.unitOfMeasure: 'QuantityUnit'
       quantity as Quantity,
+      quantity_unit as QuantityUnit,
       @Semantics.amount.currencyCode: 'CurrencyCode'
       amount as Amount,
       currency_code as CurrencyCode,
       _Order
 }
-
