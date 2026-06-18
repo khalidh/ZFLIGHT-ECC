@@ -6,7 +6,7 @@ define root view entity ZF2_I_Order
     on $projection.BookingID = _Booking.BookingID
   association [0..*] to ZF2_I_ORDER_ITEM as _Items
     on $projection.OrderID = _Items.OrderID
-  association [0..1] to ZF2_I_Invoice as _Invoice
+  association [0..*] to ZF2_I_Invoice as _Invoice
     on $projection.OrderID = _Invoice.OrderID
 {
   key order_id as OrderID,
@@ -26,4 +26,3 @@ define root view entity ZF2_I_Order
       _Items,
       _Invoice
 }
-

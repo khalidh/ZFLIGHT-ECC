@@ -2,7 +2,6 @@
 @AccessControl.authorizationCheck: #CHECK
 @Metadata.allowExtensions: true
 define view entity ZF2_C_ORDER_ITEM
-  provider contract transactional_query
   as projection on ZF2_I_ORDER_ITEM
 {
   key OrderID,
