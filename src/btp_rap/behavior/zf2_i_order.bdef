@@ -15,11 +15,3 @@ etag master LastChangedAt
   association _Invoice;
 
 }
-
-define behavior for ZF2_I_ORDER_ITEM alias SalesOrderItem
-persistent table zf2_order_item
-{
-  update;
-  delete;
-  field ( readonly ) OrderID;
-}

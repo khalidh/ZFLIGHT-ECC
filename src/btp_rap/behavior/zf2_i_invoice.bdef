@@ -13,11 +13,3 @@ etag master LastChangedAt
 
   association _Payments;
 }
-
-define behavior for ZF2_I_Payment alias Payment
-persistent table zf2_payment
-{
-  update;
-  delete;
-  field ( readonly ) InvoiceID;
-}
