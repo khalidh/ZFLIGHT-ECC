@@ -2,7 +2,7 @@
 
 ## Unit Tests
 
-- `ZF2_CL_FLIGHT_PRICING_TEST`: pricing and tax calculation.
+- Add pricing and tax calculation tests for `ZF2_CL_FLIGHT_PRICING`.
 - Add validation tests for `ZF2_CL_FLIGHT_VALIDATION`.
 - Add status transition tests for booking, order and invoice actions.
 
@@ -23,4 +23,3 @@
 - Execute `confirmBooking` and `createOrder`.
 - Publish `ZF2_API_FLIGHT_BOOKING_O4`.
 - Test read-only external API access with communication arrangement.
-

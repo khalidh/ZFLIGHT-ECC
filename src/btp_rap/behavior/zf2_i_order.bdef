@@ -14,10 +14,6 @@ etag master LastChangedAt
   association _Items;
   association _Invoice;
 
-  determination calculateTotals on modify { field NetAmount, TaxAmount; }
-
-  action releaseOrder result [1] $self;
-  action createInvoice result [1] ZF2_I_Invoice;
 }
 
 define behavior for ZF2_I_ORDER_ITEM alias SalesOrderItem

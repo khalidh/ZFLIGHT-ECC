@@ -13,6 +13,4 @@ etag master LastChangedAt
 
   field ( readonly ) LastChangedAt, LocalLastChangedAt;
 
-  validation validateCapacity on save { field SeatsMax, SeatsOccupied; }
-  action recalculateAvailability result [1] $self;
 }

@@ -12,9 +12,6 @@ etag master LastChangedAt
   delete;
 
   association _Payments;
-
-  action cancelInvoice result [1] $self;
-  action registerPayment parameter ZF2_PAYMENT_INPUT result [1] ZF2_I_Payment;
 }
 
 define behavior for ZF2_I_Payment alias Payment
