@@ -5,10 +5,6 @@ define root view entity ZF2_I_Flight
   association to ZF2_I_FLIGHT_CONNECTION as _Connection
     on  $projection.CarrierID    = _Connection.CarrierID
     and $projection.ConnectionID = _Connection.ConnectionID
-  association [0..*] to ZF2_I_Booking as _Bookings
-    on  $projection.CarrierID    = _Bookings.CarrierID
-    and $projection.ConnectionID = _Bookings.ConnectionID
-    and $projection.FlightDate   = _Bookings.FlightDate
 {
   key carrier_id as CarrierID,
   key connection_id as ConnectionID,
@@ -22,6 +18,5 @@ define root view entity ZF2_I_Flight
       flight_status as FlightStatus,
       local_last_changed_at as LocalLastChangedAt,
       last_changed_at as LastChangedAt,
-      _Connection,
-      _Bookings
+      _Connection
 }

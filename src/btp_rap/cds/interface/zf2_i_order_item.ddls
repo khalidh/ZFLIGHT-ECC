@@ -2,8 +2,6 @@
 @AccessControl.authorizationCheck: #CHECK
 define view entity ZF2_I_ORDER_ITEM
   as select from zf2_order_item
-  association to ZF2_I_Order as _Order
-    on $projection.OrderID = _Order.OrderID
 {
   key order_id as OrderID,
   key item_no as ItemNo,
@@ -14,6 +12,5 @@ define view entity ZF2_I_ORDER_ITEM
       quantity_unit as QuantityUnit,
       @Semantics.amount.currencyCode: 'CurrencyCode'
       amount as Amount,
-      currency_code as CurrencyCode,
-      _Order
+      currency_code as CurrencyCode
 }

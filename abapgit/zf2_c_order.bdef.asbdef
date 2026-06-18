@@ -17,6 +17,4 @@ define behavior for ZF2_C_ORDER_ITEM alias SalesOrderItem
 {
   use update;
   use delete;
-  use association _Order;
 }
-

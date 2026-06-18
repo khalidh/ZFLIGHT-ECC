@@ -18,6 +18,5 @@ define view entity ZF2_C_FLIGHT_CONNECTION
       ArrivalTime,
       Distance,
       DistanceUnit,
-      _Carrier,
-      _Flights
+      _Carrier
 }

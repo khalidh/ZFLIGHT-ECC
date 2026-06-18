@@ -15,8 +15,6 @@ etag master LastChangedAt
 
   field ( readonly ) LastChangedAt, LocalLastChangedAt, TotalAmount, TaxAmount;
 
-  association _Order;
-
   validation validateFlightCapacity on save { field CarrierID, ConnectionID, FlightDate; }
   validation validateCustomer on save { field CustomerID; }
   determination calculatePrice on modify { field CarrierID, ConnectionID, FlightDate, SeatClass; }
@@ -25,4 +23,3 @@ etag master LastChangedAt
   action cancelBooking parameter ZF2_BOOKING_CANCEL_PARAM result [1] $self;
   action createOrder result [1] ZF2_I_Order;
 }
-

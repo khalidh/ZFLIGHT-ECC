@@ -20,7 +20,5 @@ define root view entity ZF2_C_Booking
       CancelReason,
       LastChangedAt,
       _Customer,
-      _Flight,
-      _Order
+      _Flight
 }
-

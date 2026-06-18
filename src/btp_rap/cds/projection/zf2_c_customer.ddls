@@ -12,6 +12,5 @@ define root view entity ZF2_C_Customer
       PhoneNumber,
       Country,
       Language,
-      Vip,
-      _Bookings
+      Vip
 }

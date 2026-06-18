@@ -16,6 +16,4 @@ define behavior for ZF2_C_Payment alias Payment
 {
   use update;
   use delete;
-  use association _Invoice;
 }
-

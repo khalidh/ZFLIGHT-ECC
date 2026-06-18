@@ -8,8 +8,6 @@ define root view entity ZF2_I_Booking
     on  $projection.CarrierID    = _Flight.CarrierID
     and $projection.ConnectionID = _Flight.ConnectionID
     and $projection.FlightDate   = _Flight.FlightDate
-  association [0..1] to ZF2_I_Order as _Order
-    on $projection.BookingID = _Order.BookingID
 {
   key booking_id as BookingID,
       customer_id as CustomerID,
@@ -30,7 +28,5 @@ define root view entity ZF2_I_Booking
       local_last_changed_at as LocalLastChangedAt,
       last_changed_at as LastChangedAt,
       _Customer,
-      _Flight,
-      _Order
+      _Flight
 }
-

@@ -1,8 +1,7 @@
 @Metadata.layer: #CORE
 annotate view ZF2_C_Flight with {
   @UI.facet: [
-    { id: 'Flight', purpose: #STANDARD, type: #IDENTIFICATION_REFERENCE, label: 'Flight', position: 10 },
-    { id: 'Bookings', purpose: #STANDARD, type: #LINEITEM_REFERENCE, label: 'Bookings', position: 20, targetElement: '_Bookings' }
+    { id: 'Flight', purpose: #STANDARD, type: #IDENTIFICATION_REFERENCE, label: 'Flight', position: 10 }
   ]
   @UI.lineItem: [{ position: 10 }]
   @UI.selectionField: [{ position: 10 }]
@@ -25,4 +24,3 @@ annotate view ZF2_C_Flight with {
   @UI.lineItem: [{ position: 60 }]
   SeatsMax;
 }
-

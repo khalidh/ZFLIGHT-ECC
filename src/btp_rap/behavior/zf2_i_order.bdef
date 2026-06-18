@@ -24,12 +24,8 @@ etag master LastChangedAt
 
 define behavior for ZF2_I_ORDER_ITEM alias SalesOrderItem
 persistent table zf2_order_item
-lock dependent by _Order
-authorization dependent by _Order
 {
   update;
   delete;
   field ( readonly ) OrderID;
-  association _Order;
 }
-

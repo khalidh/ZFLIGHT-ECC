@@ -8,6 +8,5 @@ define root view entity ZF2_C_FLIGHT_CARRIER
   key CarrierID,
       CarrierName,
       CurrencyCode,
-      Url,
-      _Connections
+      Url
 }

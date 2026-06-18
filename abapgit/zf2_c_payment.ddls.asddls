@@ -11,6 +11,5 @@ define view entity ZF2_C_Payment
       Amount,
       CurrencyCode,
       PaymentMethod,
-      Reference,
-      _Invoice
+      Reference
 }

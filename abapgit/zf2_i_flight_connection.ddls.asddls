@@ -4,9 +4,6 @@ define view entity ZF2_I_FLIGHT_CONNECTION
   as select from zf2_connection
   association to ZF2_I_FLIGHT_CARRIER as _Carrier
     on $projection.CarrierID = _Carrier.CarrierID
-  association [0..*] to ZF2_I_Flight as _Flights
-    on  $projection.CarrierID    = _Flights.CarrierID
-    and $projection.ConnectionID = _Flights.ConnectionID
 {
   key carrier_id as CarrierID,
   key connection_id as ConnectionID,
@@ -21,6 +18,5 @@ define view entity ZF2_I_FLIGHT_CONNECTION
       arrival_time as ArrivalTime,
       distance as Distance,
       distance_unit as DistanceUnit,
-      _Carrier,
-      _Flights
+      _Carrier
 }

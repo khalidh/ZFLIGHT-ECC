@@ -8,6 +8,4 @@ define behavior for ZF2_C_Flight alias Flight
   use update;
   use delete;
   use action recalculateAvailability;
-  use association _Bookings;
 }
-

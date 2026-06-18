@@ -14,6 +14,5 @@ define root view entity ZF2_C_Flight
       SeatsMax,
       SeatsOccupied,
       FlightStatus,
-      LastChangedAt,
-      _Bookings
+      LastChangedAt
 }

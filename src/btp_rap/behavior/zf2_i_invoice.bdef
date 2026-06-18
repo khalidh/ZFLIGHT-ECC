@@ -21,12 +21,8 @@ etag master LastChangedAt
 
 define behavior for ZF2_I_Payment alias Payment
 persistent table zf2_payment
-lock dependent by _Invoice
-authorization dependent by _Invoice
 {
   update;
   delete;
   field ( readonly ) InvoiceID;
-  association _Invoice;
 }
-

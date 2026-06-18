@@ -12,6 +12,5 @@ define view entity ZF2_C_ORDER_ITEM
       Quantity,
       QuantityUnit,
       Amount,
-      CurrencyCode,
-      _Order
+      CurrencyCode
 }
