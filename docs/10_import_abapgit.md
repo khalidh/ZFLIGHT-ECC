@@ -35,6 +35,8 @@ https://github.com/khalidh/ZFLIGHT-ECC.git
 
 ## Point d'attention
 
+Les tables persistantes `ZFL_*` sont serialisees comme objets abapGit `TABL`. Si un import precedent a cree des objets inactifs `DDLS ZFL_*`, il faut les supprimer avant de relancer le pull, car ces anciens objets ne sont pas les tables attendues.
+
 Les behavior definitions actuelles utilisent `with draft` et referencent des draft tables `zfl_d_*`.
 
 Si l'activation bloque sur ces objets, il faut soit:

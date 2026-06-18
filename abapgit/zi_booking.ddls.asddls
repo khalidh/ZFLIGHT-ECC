@@ -8,7 +8,8 @@ define root view entity ZI_Booking
     on  $projection.CarrierID    = _Flight.CarrierID
     and $projection.ConnectionID = _Flight.ConnectionID
     and $projection.FlightDate   = _Flight.FlightDate
-  composition [0..1] of ZI_Order as _Order
+  association [0..1] to ZI_Order as _Order
+    on $projection.BookingID = _Order.BookingID
 {
   key booking_id as BookingID,
       customer_id as CustomerID,

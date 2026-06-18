@@ -21,6 +21,6 @@ define root view entity ZC_Booking
       LastChangedAt,
       _Customer,
       _Flight,
-      _Order : redirected to composition child ZC_Order
+      _Order
 }
 

@@ -15,7 +15,7 @@ define root view entity ZC_Order
       GrossAmount,
       CurrencyCode,
       LastChangedAt,
-      _Items : redirected to composition child ZC_OrderItem,
-      _Invoice : redirected to composition child ZC_Invoice
+      _Items,
+      _Invoice
 }
 

@@ -4,8 +4,10 @@ define root view entity ZI_Order
   as select from zfl_order
   association to ZI_Booking as _Booking
     on $projection.BookingID = _Booking.BookingID
-  composition [0..*] of ZI_OrderItem as _Items
-  composition [0..1] of ZI_Invoice as _Invoice
+  association [0..*] to ZI_OrderItem as _Items
+    on $projection.OrderID = _Items.OrderID
+  association [0..1] to ZI_Invoice as _Invoice
+    on $projection.OrderID = _Invoice.OrderID
 {
   key order_id as OrderID,
       booking_id as BookingID,
