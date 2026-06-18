@@ -1,10 +1,12 @@
 @EndUserText.label: 'Flight Connection'
 @AccessControl.authorizationCheck: #CHECK
-define view entity ZF2_I_FlightConnection
+define view entity ZF2_I_FLIGHT_CONNECTION
   as select from zf2_connection
-  association to parent ZF2_I_FlightCarrier as _Carrier
+  association to ZF2_I_FLIGHT_CARRIER as _Carrier
     on $projection.CarrierID = _Carrier.CarrierID
-  composition [0..*] of ZF2_I_Flight as _Flights
+  association [0..*] to ZF2_I_Flight as _Flights
+    on  $projection.CarrierID    = _Flights.CarrierID
+    and $projection.ConnectionID = _Flights.ConnectionID
 {
   key carrier_id as CarrierID,
   key connection_id as ConnectionID,
@@ -22,4 +24,3 @@ define view entity ZF2_I_FlightConnection
       _Carrier,
       _Flights
 }
-

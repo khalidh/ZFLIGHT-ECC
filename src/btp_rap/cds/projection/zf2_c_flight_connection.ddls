@@ -1,9 +1,9 @@
 @EndUserText.label: 'Manage Connections'
 @AccessControl.authorizationCheck: #CHECK
 @Metadata.allowExtensions: true
-define view entity ZF2_C_FlightConnection
+define view entity ZF2_C_FLIGHT_CONNECTION
   provider contract transactional_query
-  as projection on ZF2_I_FlightConnection
+  as projection on ZF2_I_FLIGHT_CONNECTION
 {
   key CarrierID,
   key ConnectionID,
@@ -18,7 +18,6 @@ define view entity ZF2_C_FlightConnection
       ArrivalTime,
       Distance,
       DistanceUnit,
-      _Carrier : redirected to parent ZF2_C_FlightCarrier,
-      _Flights : redirected to composition child ZF2_C_Flight
+      _Carrier,
+      _Flights
 }
-

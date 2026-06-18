@@ -10,6 +10,6 @@ define behavior for ZF2_C_Booking alias Booking
   use action confirmBooking;
   use action cancelBooking;
   use action createOrder;
-  use association _Order { create; with draft; }
+  use association _Order;
 }
 

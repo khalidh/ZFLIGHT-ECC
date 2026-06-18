@@ -2,7 +2,7 @@
 define service ZF2_UI_BOOKING_MANAGE {
   expose ZF2_C_Booking as Bookings;
   expose ZF2_C_Order as Orders;
-  expose ZF2_C_OrderItem as OrderItems;
+  expose ZF2_C_ORDER_ITEM as OrderItems;
   expose ZF2_C_Invoice as Invoices;
   expose ZF2_C_Payment as Payments;
 }

@@ -15,7 +15,7 @@ etag master LastChangedAt
 
   field ( readonly ) LastChangedAt, LocalLastChangedAt;
 
-  association _Bookings { create; with draft; }
+  association _Bookings;
 
   validation validateCapacity on save { field SeatsMax, SeatsOccupied; }
   action recalculateAvailability result [1] $self;

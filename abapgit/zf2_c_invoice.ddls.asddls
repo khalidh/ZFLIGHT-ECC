@@ -14,6 +14,5 @@ define root view entity ZF2_C_Invoice
       CurrencyCode,
       LastChangedAt,
       _Order,
-      _Payments : redirected to composition child ZF2_C_Payment
+      _Payments
 }
-

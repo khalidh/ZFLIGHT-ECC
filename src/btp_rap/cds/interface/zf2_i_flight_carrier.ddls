@@ -1,8 +1,9 @@
 @EndUserText.label: 'Flight Carrier'
 @AccessControl.authorizationCheck: #CHECK
-define root view entity ZF2_I_FlightCarrier
+define root view entity ZF2_I_FLIGHT_CARRIER
   as select from zf2_carrier
-  composition [0..*] of ZF2_I_FlightConnection as _Connections
+  association [0..*] to ZF2_I_FLIGHT_CONNECTION as _Connections
+    on $projection.CarrierID = _Connections.CarrierID
 {
   key carrier_id as CarrierID,
       carrier_name as CarrierName,
@@ -14,4 +15,3 @@ define root view entity ZF2_I_FlightCarrier
       last_changed_at as LastChangedAt,
       _Connections
 }
-

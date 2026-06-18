@@ -1,6 +1,6 @@
 @EndUserText.label: 'Flight Status History'
 @AccessControl.authorizationCheck: #CHECK
-define view entity ZF2_I_StatusHistory
+define view entity ZF2_I_STATUS_HISTORY
   as select from zf2_status_hist
 {
   key history_uuid as HistoryUUID,

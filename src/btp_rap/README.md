@@ -48,26 +48,26 @@ Persistent tables:
 
 Interface CDS:
 
-- `ZF2_I_FlightCarrier`
-- `ZF2_I_FlightConnection`
+- `ZF2_I_FLIGHT_CARRIER`
+- `ZF2_I_FLIGHT_CONNECTION`
 - `ZF2_I_Flight`
 - `ZF2_I_Customer`
 - `ZF2_I_Booking`
 - `ZF2_I_Order`
-- `ZF2_I_OrderItem`
+- `ZF2_I_ORDER_ITEM`
 - `ZF2_I_Invoice`
 - `ZF2_I_Payment`
-- `ZF2_I_StatusHistory`
+- `ZF2_I_STATUS_HISTORY`
 
 Projection CDS:
 
-- `ZF2_C_FlightCarrier`
-- `ZF2_C_FlightConnection`
+- `ZF2_C_FLIGHT_CARRIER`
+- `ZF2_C_FLIGHT_CONNECTION`
 - `ZF2_C_Flight`
 - `ZF2_C_Customer`
 - `ZF2_C_Booking`
 - `ZF2_C_Order`
-- `ZF2_C_OrderItem`
+- `ZF2_C_ORDER_ITEM`
 - `ZF2_C_Invoice`
 - `ZF2_C_Payment`
 

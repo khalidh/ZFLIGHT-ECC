@@ -2,7 +2,7 @@
 @AccessControl.authorizationCheck: #CHECK
 define view entity ZF2_I_Payment
   as select from zf2_payment
-  association to parent ZF2_I_Invoice as _Invoice
+  association to ZF2_I_Invoice as _Invoice
     on $projection.InvoiceID = _Invoice.InvoiceID
 {
   key payment_id as PaymentID,
@@ -15,4 +15,3 @@ define view entity ZF2_I_Payment
       reference as Reference,
       _Invoice
 }
-

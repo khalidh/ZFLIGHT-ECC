@@ -4,7 +4,8 @@ define root view entity ZF2_I_Invoice
   as select from zf2_invoice
   association to ZF2_I_Order as _Order
     on $projection.OrderID = _Order.OrderID
-  composition [0..*] of ZF2_I_Payment as _Payments
+  association [0..*] to ZF2_I_Payment as _Payments
+    on $projection.InvoiceID = _Payments.InvoiceID
 {
   key invoice_id as InvoiceID,
       order_id as OrderID,
@@ -19,4 +20,3 @@ define root view entity ZF2_I_Invoice
       _Order,
       _Payments
 }
-

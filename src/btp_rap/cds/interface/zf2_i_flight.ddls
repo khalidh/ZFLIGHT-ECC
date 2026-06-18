@@ -2,10 +2,13 @@
 @AccessControl.authorizationCheck: #CHECK
 define root view entity ZF2_I_Flight
   as select from zf2_flight
-  association to ZF2_I_FlightConnection as _Connection
+  association to ZF2_I_FLIGHT_CONNECTION as _Connection
     on  $projection.CarrierID    = _Connection.CarrierID
     and $projection.ConnectionID = _Connection.ConnectionID
-  composition [0..*] of ZF2_I_Booking as _Bookings
+  association [0..*] to ZF2_I_Booking as _Bookings
+    on  $projection.CarrierID    = _Bookings.CarrierID
+    and $projection.ConnectionID = _Bookings.ConnectionID
+    and $projection.FlightDate   = _Bookings.FlightDate
 {
   key carrier_id as CarrierID,
   key connection_id as ConnectionID,
@@ -22,4 +25,3 @@ define root view entity ZF2_I_Flight
       _Connection,
       _Bookings
 }
-

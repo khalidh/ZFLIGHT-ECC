@@ -7,6 +7,6 @@ define behavior for ZF2_C_Customer alias Customer
   use create;
   use update;
   use delete;
-  use association _Bookings { create; with draft; }
+  use association _Bookings;
 }
 

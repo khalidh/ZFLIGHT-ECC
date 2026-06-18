@@ -9,11 +9,11 @@ define behavior for ZF2_C_Order alias SalesOrder
   use delete;
   use action releaseOrder;
   use action createInvoice;
-  use association _Items { create; with draft; }
-  use association _Invoice { create; with draft; }
+  use association _Items;
+  use association _Invoice;
 }
 
-define behavior for ZF2_C_OrderItem alias SalesOrderItem
+define behavior for ZF2_C_ORDER_ITEM alias SalesOrderItem
 {
   use update;
   use delete;

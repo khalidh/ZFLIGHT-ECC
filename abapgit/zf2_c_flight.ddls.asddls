@@ -15,6 +15,5 @@ define root view entity ZF2_C_Flight
       SeatsOccupied,
       FlightStatus,
       LastChangedAt,
-      _Bookings : redirected to composition child ZF2_C_Booking
+      _Bookings
 }
-

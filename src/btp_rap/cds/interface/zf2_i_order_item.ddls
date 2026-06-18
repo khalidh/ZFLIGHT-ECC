@@ -1,8 +1,8 @@
 @EndUserText.label: 'Flight Order Item'
 @AccessControl.authorizationCheck: #CHECK
-define view entity ZF2_I_OrderItem
+define view entity ZF2_I_ORDER_ITEM
   as select from zf2_order_item
-  association to parent ZF2_I_Order as _Order
+  association to ZF2_I_Order as _Order
     on $projection.OrderID = _Order.OrderID
 {
   key order_id as OrderID,

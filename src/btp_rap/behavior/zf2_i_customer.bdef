@@ -13,7 +13,7 @@ etag master LastChangedAt
   update;
   delete;
 
-  association _Bookings { create; with draft; }
+  association _Bookings;
 
   validation validateEmail on save { field EmailAddress; }
 }

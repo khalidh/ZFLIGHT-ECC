@@ -2,7 +2,8 @@
 @AccessControl.authorizationCheck: #CHECK
 define root view entity ZF2_I_Customer
   as select from zf2_customer
-  composition [0..*] of ZF2_I_Booking as _Bookings
+  association [0..*] to ZF2_I_Booking as _Bookings
+    on $projection.CustomerID = _Bookings.CustomerID
 {
   key customer_id as CustomerID,
       first_name as FirstName,
@@ -18,4 +19,3 @@ define root view entity ZF2_I_Customer
       last_changed_at as LastChangedAt,
       _Bookings
 }
-

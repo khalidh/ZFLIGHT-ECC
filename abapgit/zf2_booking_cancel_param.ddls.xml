@@ -3,7 +3,7 @@
  <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
   <asx:values>
    <DDLS>
-    <DDLNAME>ZF2_PARAMETERS</DDLNAME>
+    <DDLNAME>ZF2_BOOKING_CANCEL_PARAM</DDLNAME>
     <DDLANGUAGE>F</DDLANGUAGE>
     <DDTEXT>Booking cancellation parameter</DDTEXT>
     <SOURCE/>

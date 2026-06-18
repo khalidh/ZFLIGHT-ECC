@@ -13,6 +13,5 @@ define root view entity ZF2_C_Customer
       Country,
       Language,
       Vip,
-      _Bookings : redirected to composition child ZF2_C_Booking
+      _Bookings
 }
-
