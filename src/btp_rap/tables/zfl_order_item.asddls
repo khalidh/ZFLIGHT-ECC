@@ -5,7 +5,8 @@ define table zfl_order_item {
   condition_type : abap.char(4);
   description    : abap.char(80);
   quantity       : abap.quan(13,3);
+  @Semantics.amount.currencyCode : 'zfl_order_item.currency_code'
   amount         : abap.curr(15,2);
+  @Semantics.currencyCode : true
   currency_code  : abap.cuky;
 }
-

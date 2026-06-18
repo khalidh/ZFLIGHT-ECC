@@ -8,12 +8,15 @@ define table zfl_booking {
   booking_date      : abap.dats;
   booking_status    : abap.char(10);
   seat_class        : abap.char(3);
+  @Semantics.amount.currencyCode : 'zfl_booking.currency_code'
   base_amount       : abap.curr(15,2);
+  @Semantics.amount.currencyCode : 'zfl_booking.currency_code'
   tax_amount        : abap.curr(15,2);
+  @Semantics.amount.currencyCode : 'zfl_booking.currency_code'
   total_amount      : abap.curr(15,2);
+  @Semantics.currencyCode : true
   currency_code     : abap.cuky;
   cancel_reason     : abap.char(80);
   local_last_changed_at : abp_locinst_lastchange_tstmpl;
   last_changed_at       : abp_lastchange_tstmpl;
 }
-
