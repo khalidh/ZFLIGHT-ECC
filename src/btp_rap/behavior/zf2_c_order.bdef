@@ -12,9 +12,3 @@ define behavior for ZF2_C_Order alias SalesOrder
   use association _Items;
   use association _Invoice;
 }
-
-define behavior for ZF2_C_ORDER_ITEM alias SalesOrderItem
-{
-  use update;
-  use delete;
-}

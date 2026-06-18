@@ -2,7 +2,7 @@
 @AccessControl.authorizationCheck: #CHECK
 @Metadata.allowExtensions: true
 define view entity ZF2_C_FLIGHT_CONNECTION
-  as projection on ZF2_I_FLIGHT_CONNECTION
+  as select from ZF2_I_FLIGHT_CONNECTION
 {
   key CarrierID,
   key ConnectionID,
@@ -16,6 +16,5 @@ define view entity ZF2_C_FLIGHT_CONNECTION
       DepartureTime,
       ArrivalTime,
       Distance,
-      DistanceUnit,
-      _Carrier
+      DistanceUnit
 }

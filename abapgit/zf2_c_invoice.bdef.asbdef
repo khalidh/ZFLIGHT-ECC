@@ -11,9 +11,3 @@ define behavior for ZF2_C_Invoice alias Invoice
   use action registerPayment;
   use association _Payments;
 }
-
-define behavior for ZF2_C_Payment alias Payment
-{
-  use update;
-  use delete;
-}
