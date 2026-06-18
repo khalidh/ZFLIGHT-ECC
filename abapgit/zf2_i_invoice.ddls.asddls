@@ -2,8 +2,6 @@
 @AccessControl.authorizationCheck: #CHECK
 define root view entity ZF2_I_Invoice
   as select from zf2_invoice
-  association [0..*] to ZF2_I_Payment as _Payments
-    on $projection.InvoiceID = _Payments.InvoiceID
 {
   key invoice_id as InvoiceID,
       order_id as OrderID,
@@ -14,6 +12,5 @@ define root view entity ZF2_I_Invoice
       @Semantics.amount.currencyCode: 'CurrencyCode'
       paid_amount as PaidAmount,
       currency_code as CurrencyCode,
-      last_changed_at as LastChangedAt,
-      _Payments
+      last_changed_at as LastChangedAt
 }

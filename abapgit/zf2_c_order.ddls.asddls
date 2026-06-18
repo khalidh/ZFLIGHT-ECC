@@ -14,8 +14,5 @@ define root view entity ZF2_C_Order
       TaxAmount,
       GrossAmount,
       CurrencyCode,
-      LastChangedAt,
-      _Items,
-      _Invoice
+      LastChangedAt
 }
-

@@ -18,7 +18,5 @@ define root view entity ZF2_C_Booking
       TotalAmount,
       CurrencyCode,
       CancelReason,
-      LastChangedAt,
-      _Customer,
-      _Flight
+      LastChangedAt
 }

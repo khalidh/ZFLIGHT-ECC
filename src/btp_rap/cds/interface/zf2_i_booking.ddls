@@ -2,12 +2,6 @@
 @AccessControl.authorizationCheck: #CHECK
 define root view entity ZF2_I_Booking
   as select from zf2_booking
-  association to ZF2_I_Customer as _Customer
-    on $projection.CustomerID = _Customer.CustomerID
-  association to ZF2_I_Flight as _Flight
-    on  $projection.CarrierID    = _Flight.CarrierID
-    and $projection.ConnectionID = _Flight.ConnectionID
-    and $projection.FlightDate   = _Flight.FlightDate
 {
   key booking_id as BookingID,
       customer_id as CustomerID,
@@ -26,7 +20,5 @@ define root view entity ZF2_I_Booking
       currency_code as CurrencyCode,
       cancel_reason as CancelReason,
       local_last_changed_at as LocalLastChangedAt,
-      last_changed_at as LastChangedAt,
-      _Customer,
-      _Flight
+      last_changed_at as LastChangedAt
 }

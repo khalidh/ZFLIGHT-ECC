@@ -12,6 +12,5 @@ define root view entity ZF2_C_Invoice
       TotalAmount,
       PaidAmount,
       CurrencyCode,
-      LastChangedAt,
-      _Payments
+      LastChangedAt
 }
