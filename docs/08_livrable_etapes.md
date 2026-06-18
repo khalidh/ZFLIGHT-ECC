@@ -57,3 +57,7 @@ Voir tous les fichiers `docs/`.
 ## Etape 10 - Preparation migration BTP
 
 Voir [06_migration_btp_rap.md](06_migration_btp_rap.md) et les objets generes dans [src/btp_rap](../src/btp_rap).
+
+## Audit de migration BTP
+
+Voir [09_audit_migration_btp.md](09_audit_migration_btp.md).
