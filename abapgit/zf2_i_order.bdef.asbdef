@@ -11,4 +11,12 @@ etag master LastChangedAt
   update;
   delete;
 
+  field ( readonly ) LastChangedAt;
+
+  determination setInitialOrderValues on modify { create; }
+  validation validateOrder on save { create; update; }
+  validation validateOrderStatus on save { create; update; field OrderStatus; }
+
+  action release result [1] $self;
+  action createInvoice result [1] $self;
 }

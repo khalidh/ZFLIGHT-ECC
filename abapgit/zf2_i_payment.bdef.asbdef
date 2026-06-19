@@ -1,0 +1,15 @@
+managed implementation in class zf2_bp_i_payment unique;
+strict ( 2 );
+
+define behavior for ZF2_I_Payment alias Payment
+persistent table zf2_payment
+lock master
+authorization master ( instance )
+{
+  create;
+  update;
+  delete;
+
+  determination setInitialPaymentValues on modify { create; }
+  validation validatePayment on save { create; update; }
+}
