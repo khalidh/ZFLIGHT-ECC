@@ -1,6 +1,6 @@
 @EndUserText.label: 'Flight Payment'
 @AccessControl.authorizationCheck: #CHECK
-define view entity ZF2_I_Payment
+define root view entity ZF2_I_Payment
   as select from zf2_payment
 {
   key payment_id as PaymentID,

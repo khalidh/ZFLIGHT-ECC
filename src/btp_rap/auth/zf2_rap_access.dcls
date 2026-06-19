@@ -8,4 +8,5 @@ define role ZF2_RAP_ACCESS {
   grant select on ZF2_I_Booking where ( 1 = 1 );
   grant select on ZF2_I_Order where ( 1 = 1 );
   grant select on ZF2_I_Invoice where ( 1 = 1 );
+  grant select on ZF2_I_Payment where ( 1 = 1 );
 }

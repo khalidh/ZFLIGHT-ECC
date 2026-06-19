@@ -11,4 +11,12 @@ etag master LastChangedAt
   update;
   delete;
 
+  field ( readonly ) LastChangedAt, PaidAmount;
+
+  determination setInitialInvoiceValues on modify { create; }
+  validation validateInvoice on save { create; update; }
+  validation validateInvoiceStatus on save { create; update; field InvoiceStatus; }
+
+  action registerPayment parameter ZF2_PAYMENT_INPUT result [1] $self;
+  action cancel result [1] $self;
 }

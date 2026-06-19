@@ -76,3 +76,10 @@ Services:
 - `ZF2_UI_FLIGHT_MANAGE`
 - `ZF2_UI_BOOKING_MANAGE`
 - `ZF2_API_FLIGHT_BOOKING`
+
+Behavior actions:
+
+- `ZF2_I_Booking`: `confirm`, `cancel`, `createOrder`
+- `ZF2_I_Order`: `release`, `createInvoice`
+- `ZF2_I_Invoice`: `registerPayment`, `cancel`
+- `ZF2_I_Payment`: create/update/delete with validation
