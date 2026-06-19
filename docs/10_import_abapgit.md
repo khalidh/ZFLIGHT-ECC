@@ -30,8 +30,12 @@ https://github.com/khalidh/ZFLIGHT-ECC.git
 4. Behavior definitions `ZF2_I_*` et projections `ZF2_C_*`.
 5. Classes `ZF2_BP_*` et helpers `ZF2_CL_*`.
 6. Services `ZF2_UI_*` et `ZF2_API_*`.
-7. Metadata extensions `ZF2_C_*_UI`.
-8. DCL `ZF2_RAP_ACCESS`.
+7. Service bindings OData V4 a creer dans ADT:
+   - `ZF2_UI_FLIGHT_MANAGE_O4`
+   - `ZF2_UI_BOOKING_MANAGE_O4`
+   - `ZF2_API_FLIGHT_BOOKING_O4`
+8. Metadata extensions `ZF2_C_*_UI`.
+9. DCL `ZF2_RAP_ACCESS`.
 
 ## Point d'attention
 
@@ -53,3 +57,5 @@ Si l'activation bloque sur ces objets, il faut soit:
 - ou retirer temporairement le draft des behavior definitions pour une premiere activation technique.
 
 Le dossier `abapgit/` rend les objets detectables par abapGit. Il ne garantit pas que toutes les dependances fonctionnelles RAP soient deja completes.
+
+Les service bindings sont a creer et publier dans ADT apres activation des service definitions. Voir `src/btp_rap/services/service_bindings.md` pour les noms, types et controles attendus.
