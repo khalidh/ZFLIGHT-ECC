@@ -20,4 +20,23 @@ etag master LastChangedAt
   action confirm result [1] $self;
   action cancel parameter ZF2_BOOKING_CANCEL_PARAM result [1] $self;
   action createOrder result [1] $self;
+
+  mapping for zf2_booking
+  {
+    BookingID          = booking_id;
+    CustomerID         = customer_id;
+    CarrierID          = carrier_id;
+    ConnectionID       = connection_id;
+    FlightDate         = flight_date;
+    BookingDate        = booking_date;
+    BookingStatus      = booking_status;
+    SeatClass          = seat_class;
+    BaseAmount         = base_amount;
+    TaxAmount          = tax_amount;
+    TotalAmount        = total_amount;
+    CurrencyCode       = currency_code;
+    CancelReason       = cancel_reason;
+    LocalLastChangedAt = local_last_changed_at;
+    LastChangedAt      = last_changed_at;
+  }
 }
