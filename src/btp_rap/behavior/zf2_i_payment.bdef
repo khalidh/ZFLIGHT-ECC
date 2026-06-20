@@ -12,4 +12,15 @@ authorization master ( instance )
 
   determination setInitialPaymentValues on modify { create; }
   validation validatePayment on save { create; update; }
+
+  mapping for zf2_payment
+  {
+    PaymentID     = payment_id;
+    InvoiceID     = invoice_id;
+    PaymentDate   = payment_date;
+    Amount        = amount;
+    CurrencyCode  = currency_code;
+    PaymentMethod = payment_method;
+    Reference     = reference;
+  }
 }

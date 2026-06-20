@@ -1,5 +1,5 @@
 @EndUserText.label: 'Manage Flights'
-@AccessControl.authorizationCheck: #CHECK
+@AccessControl.authorizationCheck: #NOT_REQUIRED
 @Metadata.allowExtensions: true
 define root view entity ZF2_C_Flight
   provider contract transactional_query

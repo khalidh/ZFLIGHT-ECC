@@ -1,5 +1,5 @@
 @EndUserText.label: 'Flight Order'
-@AccessControl.authorizationCheck: #CHECK
+@AccessControl.authorizationCheck: #NOT_REQUIRED
 define root view entity ZF2_I_Order
   as select from zf2_order
 {

@@ -1,5 +1,5 @@
 @EndUserText.label: 'Flight Payment'
-@AccessControl.authorizationCheck: #CHECK
+@AccessControl.authorizationCheck: #NOT_REQUIRED
 define root view entity ZF2_I_Payment
   as select from zf2_payment
 {

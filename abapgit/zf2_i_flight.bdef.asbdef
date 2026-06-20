@@ -13,4 +13,18 @@ etag master LastChangedAt
 
   field ( readonly ) LastChangedAt, LocalLastChangedAt;
 
+  mapping for zf2_flight
+  {
+    CarrierID          = carrier_id;
+    ConnectionID       = connection_id;
+    FlightDate         = flight_date;
+    Price              = price;
+    CurrencyCode       = currency_code;
+    PlaneType          = plane_type;
+    SeatsMax           = seats_max;
+    SeatsOccupied      = seats_occupied;
+    FlightStatus       = flight_status;
+    LocalLastChangedAt = local_last_changed_at;
+    LastChangedAt      = last_changed_at;
+  }
 }

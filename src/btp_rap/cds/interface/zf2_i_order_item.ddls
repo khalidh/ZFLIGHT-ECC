@@ -1,5 +1,5 @@
 @EndUserText.label: 'Flight Order Item'
-@AccessControl.authorizationCheck: #CHECK
+@AccessControl.authorizationCheck: #NOT_REQUIRED
 define view entity ZF2_I_ORDER_ITEM
   as select from zf2_order_item
 {

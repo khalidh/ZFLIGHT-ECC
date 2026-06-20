@@ -11,4 +11,19 @@ etag master LastChangedAt
   update;
   delete;
 
+  mapping for zf2_customer
+  {
+    CustomerID      = customer_id;
+    FirstName       = first_name;
+    LastName        = last_name;
+    EmailAddress    = email_address;
+    PhoneNumber     = phone_number;
+    Country         = country;
+    Language        = language;
+    Vip             = vip;
+    CreatedBy       = created_by;
+    CreatedAt       = created_at;
+    LastChangedBy   = last_changed_by;
+    LastChangedAt   = last_changed_at;
+  }
 }

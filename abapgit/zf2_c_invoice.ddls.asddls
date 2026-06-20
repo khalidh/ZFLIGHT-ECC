@@ -1,5 +1,5 @@
 @EndUserText.label: 'Manage Invoices'
-@AccessControl.authorizationCheck: #CHECK
+@AccessControl.authorizationCheck: #NOT_REQUIRED
 @Metadata.allowExtensions: true
 define root view entity ZF2_C_Invoice
   provider contract transactional_query

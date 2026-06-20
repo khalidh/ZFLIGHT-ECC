@@ -1,5 +1,5 @@
 @EndUserText.label: 'Flight Carrier'
-@AccessControl.authorizationCheck: #CHECK
+@AccessControl.authorizationCheck: #NOT_REQUIRED
 define root view entity ZF2_I_FLIGHT_CARRIER
   as select from zf2_carrier
 {

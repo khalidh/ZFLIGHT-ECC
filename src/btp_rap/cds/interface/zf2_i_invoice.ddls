@@ -1,5 +1,5 @@
 @EndUserText.label: 'Flight Invoice'
-@AccessControl.authorizationCheck: #CHECK
+@AccessControl.authorizationCheck: #NOT_REQUIRED
 define root view entity ZF2_I_Invoice
   as select from zf2_invoice
 {

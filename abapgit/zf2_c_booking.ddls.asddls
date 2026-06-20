@@ -1,5 +1,5 @@
 @EndUserText.label: 'Manage Bookings'
-@AccessControl.authorizationCheck: #CHECK
+@AccessControl.authorizationCheck: #NOT_REQUIRED
 @Metadata.allowExtensions: true
 define root view entity ZF2_C_Booking
   provider contract transactional_query

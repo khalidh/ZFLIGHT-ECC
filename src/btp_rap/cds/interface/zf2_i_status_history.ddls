@@ -1,5 +1,5 @@
 @EndUserText.label: 'Flight Status History'
-@AccessControl.authorizationCheck: #CHECK
+@AccessControl.authorizationCheck: #NOT_REQUIRED
 define view entity ZF2_I_STATUS_HISTORY
   as select from zf2_status_hist
 {
@@ -12,4 +12,3 @@ define view entity ZF2_I_STATUS_HISTORY
       changed_at as ChangedAt,
       change_reason as ChangeReason
 }
-
