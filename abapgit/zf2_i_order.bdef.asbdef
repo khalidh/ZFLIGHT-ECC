@@ -19,18 +19,4 @@ etag master LastChangedAt
 
   action release result [1] $self;
   action createInvoice result [1] $self;
-
-  mapping for zf2_order
-  {
-    OrderID       = order_id;
-    BookingID     = booking_id;
-    CustomerID    = customer_id;
-    OrderDate     = order_date;
-    OrderStatus   = order_status;
-    NetAmount     = net_amount;
-    TaxAmount     = tax_amount;
-    GrossAmount   = gross_amount;
-    CurrencyCode  = currency_code;
-    LastChangedAt = last_changed_at;
-  }
 }

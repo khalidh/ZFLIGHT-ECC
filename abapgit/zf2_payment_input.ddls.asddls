@@ -1,5 +1,6 @@
 @EndUserText.label: 'Payment input parameter'
-define abstract entity ZF2_PAYMENT_INPUT {
+define abstract entity ZF2_PAYMENT_INPUT
+{
   PaymentDate   : abap.dats;
   @Semantics.amount.currencyCode: 'CurrencyCode'
   Amount        : abap.curr(15,2);
