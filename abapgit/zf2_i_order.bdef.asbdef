@@ -4,7 +4,6 @@ strict ( 2 );
 define behavior for ZF2_I_Order alias SalesOrder
 persistent table zf2_order
 lock master
-authorization master ( instance )
 etag master LastChangedAt
 {
   create;

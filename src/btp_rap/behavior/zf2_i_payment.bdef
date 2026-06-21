@@ -4,7 +4,6 @@ strict ( 2 );
 define behavior for ZF2_I_Payment alias Payment
 persistent table zf2_payment
 lock master
-authorization master ( instance )
 {
   create;
   update;
