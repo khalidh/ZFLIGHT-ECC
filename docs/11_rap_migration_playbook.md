@@ -289,6 +289,189 @@ puis :
 use action createOrder;
 ```
 
+## Apprentissages Projet Et Outillage
+
+Cette section conserve les apprentissages qui ne sont pas seulement du code RAP, mais qui ont ete utiles pendant le projet de migration.
+
+### Workflow Fonctionnel A Tester
+
+Le scenario cible tourne autour des objets suivants :
+
+1. `Bookings` : reservation de vol.
+2. `Orders` : commande creee a partir d'une reservation.
+3. `OrderItems` : lignes de commande.
+4. `Invoices` : facture liee a une commande.
+5. `Payments` : paiement lie a une facture.
+
+Ordre de test recommande :
+
+1. Afficher la liste des bookings.
+2. Filtrer un booking, par exemple `BookingID = 5001`.
+3. Ouvrir le detail du booking.
+4. Verifier les champs affiches par les annotations `@UI.identification`.
+5. Tester les entites exposees dans le service booking :
+   - `Bookings`,
+   - `Orders`,
+   - `OrderItems`,
+   - `Invoices`,
+   - `Payments`.
+6. Tester creation/modification/suppression standard avant les actions metier.
+7. Reintroduire les actions metier seulement apres stabilisation :
+   - `confirm`,
+   - `cancel`,
+   - `createOrder`,
+   - `release`,
+   - `createInvoice`,
+   - `registerPayment`.
+
+### Workflow abapGit Et GitHub
+
+Deux flux ont ete utilises :
+
+1. Modifications dans le repo local VS Code, puis push GitHub.
+2. Pull depuis Eclipse ADT via abapGit pour importer les objets ABAP.
+3. Activation manuelle dans Eclipse ADT.
+4. Tests dans le service binding et Fiori Elements preview.
+5. Si des corrections sont faites directement dans Eclipse, exporter/stage/push via abapGit pour resynchroniser GitHub.
+
+Bonnes pratiques :
+
+- Faire un `Pull` abapGit avant de tester une correction poussee depuis VS Code.
+- Activer les objets apres le pull, car abapGit importe le source mais ne garantit pas que tout soit actif.
+- Ne pas se fier uniquement au service binding : ouvrir l'objet cite dans `Problems`.
+- Garder les commits GitHub petits et nommes par intention technique.
+- Ne pas exporter vers GitHub des objets experimentaux tant qu'ils ne compilent pas.
+
+### Objets Sensibles Dans ZFLIGHT-ECC
+
+Les objets suivants ont ete touches ou identifies comme sensibles.
+
+Booking :
+
+- `ZF2_I_BOOKING` : Data Definition interface.
+- `ZF2_C_BOOKING` : Data Definition projection.
+- `ZF2_I_BOOKING` : Behavior Definition interface.
+- `ZF2_C_BOOKING` : Behavior Definition projection.
+- `ZF2_C_BOOKING_UI` : Metadata Extension.
+- `ZF2_BOOKING_CANCEL_PARAM` : structure/CDS de parametre d'action.
+
+Invoice :
+
+- `ZF2_I_INVOICE`.
+- `ZF2_C_INVOICE`.
+- `ZF2_I_INVOICE` Behavior Definition.
+- `ZF2_C_INVOICE` Behavior Definition.
+- `ZF2_C_INVOICE_UI`.
+- `ZF2_PAYMENT_INPUT`.
+
+Order :
+
+- `ZF2_I_ORDER`.
+- `ZF2_C_ORDER`.
+- `ZF2_I_ORDER_ITEM`.
+- `ZF2_C_ORDER_ITEM`.
+- `ZF2_C_ORDER_UI`.
+
+Payment :
+
+- `ZF2_I_PAYMENT`.
+- `ZF2_C_PAYMENT`.
+- `ZF2_C_PAYMENT` Behavior Definition.
+
+Customer et Flight :
+
+- `ZF2_I_CUSTOMER` doit etre actif avant `ZF2_C_CUSTOMER` et `ZF2_C_CUSTOMER_UI`.
+- `ZF2_I_FLIGHT` doit etre actif avant `ZF2_C_FLIGHT` et `ZF2_C_FLIGHT_UI`.
+- Ces objets peuvent bloquer leurs metadata extensions, mais ne sont pas toujours prioritaires pour tester le service booking.
+
+Services :
+
+- `ZF2_UI_BOOKING_MANAGE`.
+- `ZF2_UI_BOOKING_MANAGE_O4`.
+- `ZF2_API_FLIGHT_BOOKING`.
+- `ZF2_API_FLIGHT_BOOKING_O4`.
+- `ZF2_UI_FLIGHT_MANAGE`.
+- `ZF2_UI_FLIGHT_MANAGE_O4`.
+
+### Conventions De Nommage
+
+Conventions utilisees dans le projet :
+
+- `ZF2_I_*` : CDS interface view/entity.
+- `ZF2_C_*` : CDS projection/consumption view/entity.
+- `ZF2_C_*_UI` : Metadata Extension Fiori.
+- `ZF2_BP_I_*` : Behavior pool ABAP pour interface behavior.
+- `ZF2_UI_*` : Service Definition orientee Fiori Elements UI.
+- `ZF2_API_*` : Service Definition orientee API.
+- `*_O4` : Service Binding OData V4.
+
+Attention ADT :
+
+- icone bleue `D` : Data Definition.
+- icone violette `B` : Behavior Definition.
+- icone bleue `E` : Metadata Extension.
+- service definition et service binding sont dans `Business Services`.
+
+Une confusion frequente consiste a coller du code BDEF dans une Data Definition ou inversement.
+
+### Re-creation Manuelle D'Objets ADT
+
+Quand abapGit importe un objet mais qu'ADT indique qu'il n'existe pas, il peut etre necessaire de le recreer manuellement.
+
+Regle generale :
+
+1. Creer l'objet avec le bon type ADT.
+2. Utiliser le meme nom technique.
+3. Choisir le bon `Referenced Object` :
+   - pour une projection CDS `ZF2_C_*`, referencer souvent `ZF2_I_*`,
+   - pour une interface CDS `ZF2_I_*`, referencer souvent la table de base ou laisser vide selon le wizard.
+4. Coller le code exact depuis GitHub/le repo local.
+5. Sauvegarder et activer dans l'ordre des dependances.
+
+Si le wizard refuse un `Referenced Object`, verifier d'abord que cet objet existe et est actif.
+
+### SAP Build, Joule Et Dev Space
+
+Problemes observes :
+
+- SAP Build peut afficher une limite d'espaces de developpement atteinte meme apres suppression visuelle d'un projet. Dans ce cas, verifier le Dev Space Manager et les espaces restants, pas seulement la page SAP Build.
+- Joule dans BAS/ADT depend du contexte projet et des droits. Si le panneau demande de choisir un projet, utiliser `Change Project` et selectionner le projet ABAP actif.
+- Une extension ADT/ABAP dans VS Code ou BAS peut aider pour l'edition ou la navigation, mais ne remplace pas toujours Eclipse ADT pour l'activation ABAP, les service bindings et certains wizards.
+
+### Diagnostic Depuis Le Debugger
+
+Quand Fiori Elements affiche :
+
+```text
+ABAP Runtime error 'RAISE_SHORTDUMP'
+```
+
+ouvrir le debugger ADT et inspecter les variables de l'erreur.
+
+Indice important observe :
+
+```text
+MX_EXCEPTION = CX_RAP_HANDLER_NOT_IMPLEMENTED
+```
+
+Ce diagnostic oriente vers :
+
+- authorization handler manquant,
+- action handler non implemente,
+- behavior pool vide ou incomplet,
+- action exposee trop tot dans la projection.
+
+### Ce Qui A Debloque Le Projet
+
+Les corrections qui ont permis d'obtenir un preview Fiori fonctionnel :
+
+1. Retirer `authorization master ( instance )` des behaviors interface principaux.
+2. Retirer `strict ( 2 );` des behavior definitions principales.
+3. Masquer les actions dans les projections `ZF2_C_BOOKING`, `ZF2_C_INVOICE`, `ZF2_C_ORDER`.
+4. Activer les objets par dependance, pas uniquement le service binding.
+5. Ajouter `@UI.identification` aux metadata extensions avec facet `#IDENTIFICATION_REFERENCE`.
+6. Relancer le preview depuis le service binding et vider le cache navigateur si necessaire.
+
 ## Etat Actuel Du Projet
 
 Les choix de stabilisation appliques actuellement sont :
