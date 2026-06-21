@@ -3,16 +3,20 @@ annotate view ZF2_C_Order with {
   @UI.facet: [
     { id: 'Order', purpose: #STANDARD, type: #IDENTIFICATION_REFERENCE, label: 'Order', position: 10 }
   ]
+  @UI.identification: [{ position: 10 }]
   @UI.lineItem: [{ position: 10 }]
   @UI.selectionField: [{ position: 10 }]
   OrderID;
 
+  @UI.identification: [{ position: 20 }]
   @UI.lineItem: [{ position: 20 }]
   BookingID;
 
+  @UI.identification: [{ position: 30 }]
   @UI.lineItem: [{ position: 30 }]
   OrderStatus;
 
+  @UI.identification: [{ position: 40 }]
   @UI.lineItem: [{ position: 40 }]
   GrossAmount;
 }
