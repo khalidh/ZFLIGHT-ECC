@@ -1,6 +1,4 @@
 managed implementation in class zf2_bp_i_payment unique;
-strict ( 2 );
-
 define behavior for ZF2_I_Payment alias Payment
 persistent table zf2_payment
 lock master

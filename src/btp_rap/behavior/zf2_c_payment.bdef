@@ -1,6 +1,4 @@
 projection;
-strict ( 2 );
-
 define behavior for ZF2_C_Payment alias Payment
 {
   use create;

@@ -1,6 +1,4 @@
 managed implementation in class zf2_bp_i_flight unique;
-strict ( 2 );
-
 define behavior for ZF2_I_Flight alias Flight
 persistent table zf2_flight
 lock master

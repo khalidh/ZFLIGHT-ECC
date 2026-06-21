@@ -1,6 +1,4 @@
 managed implementation in class zf2_bp_i_invoice unique;
-strict ( 2 );
-
 define behavior for ZF2_I_Invoice alias Invoice
 persistent table zf2_invoice
 lock master

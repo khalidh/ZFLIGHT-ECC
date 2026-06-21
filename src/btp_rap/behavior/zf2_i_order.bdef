@@ -1,6 +1,4 @@
 managed implementation in class zf2_bp_i_order unique;
-strict ( 2 );
-
 define behavior for ZF2_I_Order alias SalesOrder
 persistent table zf2_order
 lock master

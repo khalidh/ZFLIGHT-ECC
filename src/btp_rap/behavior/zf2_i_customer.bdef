@@ -1,6 +1,4 @@
 managed implementation in class zf2_bp_i_customer unique;
-strict ( 2 );
-
 define behavior for ZF2_I_Customer alias Customer
 persistent table zf2_customer
 lock master
