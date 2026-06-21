@@ -341,6 +341,7 @@ Bonnes pratiques :
 - Ne pas se fier uniquement au service binding : ouvrir l'objet cite dans `Problems`.
 - Garder les commits GitHub petits et nommes par intention technique.
 - Ne pas exporter vers GitHub des objets experimentaux tant qu'ils ne compilent pas.
+- Si un pull abapGit semble reussi mais que l'objet ADT affiche encore l'ancienne source, ouvrir l'objet et verifier le contenu reel. Dans ce cas, refaire un commit avec une petite modification source explicite, refaire le pull, ou coller manuellement le contenu attendu dans ADT.
 
 ### Objets Sensibles Dans ZFLIGHT-ECC
 
