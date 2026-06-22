@@ -524,6 +524,7 @@ Problemes observes :
 - SAP Build peut afficher une limite d'espaces de developpement atteinte meme apres suppression visuelle d'un projet. Dans ce cas, verifier le Dev Space Manager et les espaces restants, pas seulement la page SAP Build.
 - Joule dans BAS/ADT depend du contexte projet et des droits. Si le panneau demande de choisir un projet, utiliser `Change Project` et selectionner le projet ABAP actif.
 - Une extension ADT/ABAP dans VS Code ou BAS peut aider pour l'edition ou la navigation, mais ne remplace pas toujours Eclipse ADT pour l'activation ABAP, les service bindings et certains wizards.
+- Dans VS Code, le message `Specified workspace folder ... uses an unsupported URI scheme: abap:/...` vient de l'extension `SAP CDS Language Support`. Il signifie qu'un dossier distant ABAP a ete ajoute comme dossier workspace, alors que l'extension attend un dossier local. Retirer ce dossier `abap:/...` du workspace VS Code et travailler soit depuis le repo local, soit depuis Eclipse ADT/BAS pour les objets ABAP distants.
 
 ### Diagnostic Depuis Le Debugger
 

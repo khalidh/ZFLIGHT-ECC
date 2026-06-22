@@ -1,0 +1,38 @@
+@Metadata.layer: #CORE
+annotate view ZF2_C_ORDER_ITEM with {
+  @UI.facet: [
+    { id: 'OrderItem', purpose: #STANDARD, type: #IDENTIFICATION_REFERENCE, label: 'Order Item', position: 10 }
+  ]
+  @UI.identification: [{ position: 10, label: 'Order ID' }]
+  @UI.lineItem: [{ position: 10, label: 'Order ID' }]
+  @UI.selectionField: [{ position: 10 }]
+  OrderID;
+
+  @UI.identification: [{ position: 20, label: 'Item No' }]
+  @UI.lineItem: [{ position: 20, label: 'Item No' }]
+  ItemNo;
+
+  @UI.identification: [{ position: 30, label: 'Condition Type' }]
+  @UI.lineItem: [{ position: 30, label: 'Condition Type' }]
+  ConditionType;
+
+  @UI.identification: [{ position: 40, label: 'Description' }]
+  @UI.lineItem: [{ position: 40, label: 'Description' }]
+  Description;
+
+  @UI.identification: [{ position: 50, label: 'Quantity' }]
+  @UI.lineItem: [{ position: 50, label: 'Quantity' }]
+  Quantity;
+
+  @UI.identification: [{ position: 60, label: 'Unit' }]
+  @UI.lineItem: [{ position: 60, label: 'Unit' }]
+  QuantityUnit;
+
+  @UI.identification: [{ position: 70, label: 'Amount' }]
+  @UI.lineItem: [{ position: 70, label: 'Amount' }]
+  Amount;
+
+  @UI.identification: [{ position: 80, label: 'Currency' }]
+  @UI.lineItem: [{ position: 80, label: 'Currency' }]
+  CurrencyCode;
+}
