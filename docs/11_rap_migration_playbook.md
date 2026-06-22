@@ -163,6 +163,45 @@ annotate view ZF2_C_Booking with {
 }
 ```
 
+Exemple applique a Invoice :
+
+```abap
+@Metadata.layer: #CORE
+annotate view ZF2_C_Invoice with {
+  @UI.facet: [
+    { id: 'Invoice', purpose: #STANDARD, type: #IDENTIFICATION_REFERENCE, label: 'Invoice', position: 10 }
+  ]
+  @UI.identification: [{ position: 10, label: 'Invoice ID' }]
+  @UI.lineItem: [{ position: 10 }]
+  @UI.selectionField: [{ position: 10 }]
+  InvoiceID;
+
+  @UI.identification: [{ position: 20, label: 'Order ID' }]
+  @UI.lineItem: [{ position: 20 }]
+  OrderID;
+
+  @UI.identification: [{ position: 30, label: 'Invoice Date' }]
+  @UI.lineItem: [{ position: 30 }]
+  InvoiceDate;
+
+  @UI.identification: [{ position: 40, label: 'Invoice Status' }]
+  @UI.lineItem: [{ position: 40 }]
+  InvoiceStatus;
+
+  @UI.identification: [{ position: 50, label: 'Total Amount' }]
+  @UI.lineItem: [{ position: 50 }]
+  TotalAmount;
+
+  @UI.identification: [{ position: 60, label: 'Paid Amount' }]
+  @UI.lineItem: [{ position: 60 }]
+  PaidAmount;
+
+  @UI.identification: [{ position: 70, label: 'Currency' }]
+  @UI.lineItem: [{ position: 70 }]
+  CurrencyCode;
+}
+```
+
 Sans `@UI.identification`, le detail Fiori peut afficher :
 
 ```text
