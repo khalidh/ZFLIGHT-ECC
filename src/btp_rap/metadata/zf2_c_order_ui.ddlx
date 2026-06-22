@@ -3,20 +3,40 @@ annotate view ZF2_C_Order with {
   @UI.facet: [
     { id: 'Order', purpose: #STANDARD, type: #IDENTIFICATION_REFERENCE, label: 'Order', position: 10 }
   ]
-  @UI.identification: [{ position: 10 }]
+  @UI.identification: [{ position: 10, label: 'Order ID' }]
   @UI.lineItem: [{ position: 10 }]
   @UI.selectionField: [{ position: 10 }]
   OrderID;
 
-  @UI.identification: [{ position: 20 }]
+  @UI.identification: [{ position: 20, label: 'Booking ID' }]
   @UI.lineItem: [{ position: 20 }]
   BookingID;
 
-  @UI.identification: [{ position: 30 }]
+  @UI.identification: [{ position: 30, label: 'Customer ID' }]
   @UI.lineItem: [{ position: 30 }]
+  CustomerID;
+
+  @UI.identification: [{ position: 40, label: 'Order Date' }]
+  @UI.lineItem: [{ position: 40 }]
+  OrderDate;
+
+  @UI.identification: [{ position: 50, label: 'Order Status' }]
+  @UI.lineItem: [{ position: 50 }]
   OrderStatus;
 
-  @UI.identification: [{ position: 40 }]
-  @UI.lineItem: [{ position: 40 }]
+  @UI.identification: [{ position: 60, label: 'Net Amount' }]
+  @UI.lineItem: [{ position: 60 }]
+  NetAmount;
+
+  @UI.identification: [{ position: 70, label: 'Tax Amount' }]
+  @UI.lineItem: [{ position: 70 }]
+  TaxAmount;
+
+  @UI.identification: [{ position: 80, label: 'Gross Amount' }]
+  @UI.lineItem: [{ position: 80 }]
   GrossAmount;
+
+  @UI.identification: [{ position: 90, label: 'Currency' }]
+  @UI.lineItem: [{ position: 90 }]
+  CurrencyCode;
 }
