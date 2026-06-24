@@ -100,6 +100,22 @@ Les actions peuvent rester declarees dans les behaviors interface `ZF2_I_*`, mai
 
 ## Patterns Valides Dans Ce Projet
 
+### Nommage Booking
+
+Le projet utilise la convention `ZF2_*` pour les objets RAP. Ne pas conserver
+d'anciens objets de tutoriel comme `ZI_Booking` ou `zfl_booking`.
+
+Definition correcte de l'interface booking :
+
+```abap
+define root view entity ZF2_I_Booking
+  as select from zf2_booking
+```
+
+Si ADT affiche une reference a `zfl_booking`, ouvrir l'objet concerne et le
+remplacer par `ZF2_I_Booking` / `zf2_booking`, ou supprimer l'ancien objet s'il
+n'est pas expose par les services `ZF2_*`.
+
 ### Projection Behavior Minimal
 
 ```abap
