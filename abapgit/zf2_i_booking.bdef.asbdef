@@ -8,15 +8,7 @@ etag master LastChangedAt
   update;
   delete;
 
-  field ( readonly ) LastChangedAt, LocalLastChangedAt, TotalAmount, TaxAmount;
-
-  determination setInitialBookingValues on modify { create; }
-  validation validateBooking on save { create; update; }
-  validation validateBookingStatus on save { create; update; field BookingStatus; }
-
-  action confirm result [1] $self;
-  action cancel parameter ZF2_BOOKING_CANCEL_PARAM result [1] $self;
-  action createOrder result [1] $self;
+  field ( readonly ) LastChangedAt, LocalLastChangedAt;
 
   mapping for zf2_booking
   {
