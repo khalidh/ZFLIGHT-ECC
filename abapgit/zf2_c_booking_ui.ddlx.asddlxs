@@ -1,4 +1,5 @@
 @Metadata.layer: #CORE
+@UI.createHidden: false
 annotate view ZF2_C_Booking with {
   @UI.facet: [
     { id: 'Booking', purpose: #STANDARD, type: #IDENTIFICATION_REFERENCE, label: 'Booking', position: 10 }
