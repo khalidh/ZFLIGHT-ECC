@@ -1,5 +1,13 @@
-CLASS zf2_bp_i_flight DEFINITION PUBLIC ABSTRACT FINAL FOR BEHAVIOR OF zf2_i_flight.
+class ZF2_BP_I_FLIGHT definition
+  public
+  create private .
+
+public section.
+protected section.
+private section.
 ENDCLASS.
 
-CLASS zf2_bp_i_flight IMPLEMENTATION.
+
+
+CLASS ZF2_BP_I_FLIGHT IMPLEMENTATION.
 ENDCLASS.

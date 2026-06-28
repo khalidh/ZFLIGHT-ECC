@@ -1,5 +1,13 @@
-CLASS zf2_bp_i_customer DEFINITION PUBLIC ABSTRACT FINAL FOR BEHAVIOR OF zf2_i_customer.
+class ZF2_BP_I_CUSTOMER definition
+  public
+  create private .
+
+public section.
+protected section.
+private section.
 ENDCLASS.
 
-CLASS zf2_bp_i_customer IMPLEMENTATION.
+
+
+CLASS ZF2_BP_I_CUSTOMER IMPLEMENTATION.
 ENDCLASS.

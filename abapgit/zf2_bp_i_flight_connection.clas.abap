@@ -1,5 +1,13 @@
-CLASS zf2_bp_i_flight_connection DEFINITION PUBLIC ABSTRACT FINAL FOR BEHAVIOR OF zf2_i_flight_connection.
+class ZF2_BP_I_FLIGHT_CONNECTION definition
+  public
+  create private .
+
+public section.
+protected section.
+private section.
 ENDCLASS.
 
-CLASS zf2_bp_i_flight_connection IMPLEMENTATION.
+
+
+CLASS ZF2_BP_I_FLIGHT_CONNECTION IMPLEMENTATION.
 ENDCLASS.

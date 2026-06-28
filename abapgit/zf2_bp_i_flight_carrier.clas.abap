@@ -1,5 +1,13 @@
-CLASS zf2_bp_i_flight_carrier DEFINITION PUBLIC ABSTRACT FINAL FOR BEHAVIOR OF zf2_i_flight_carrier.
+class ZF2_BP_I_FLIGHT_CARRIER definition
+  public
+  create private .
+
+public section.
+protected section.
+private section.
 ENDCLASS.
 
-CLASS zf2_bp_i_flight_carrier IMPLEMENTATION.
+
+
+CLASS ZF2_BP_I_FLIGHT_CARRIER IMPLEMENTATION.
 ENDCLASS.

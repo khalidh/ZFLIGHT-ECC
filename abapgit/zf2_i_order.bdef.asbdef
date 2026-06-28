@@ -1,9 +1,7 @@
 managed implementation in class zf2_bp_i_order unique;
-with draft;
 define behavior for ZF2_I_Order alias SalesOrder
 persistent table zf2_order
-draft table zf2_d_order
-lock master total etag LastChangedAt
+lock master
 etag master LastChangedAt
 {
   create;
@@ -18,28 +16,4 @@ etag master LastChangedAt
 
   action release result [1] $self;
   action createInvoice result [1] $self;
-
-  draft action Edit;
-  draft action Activate;
-  draft action Discard;
-  draft action Resume;
-  draft determine action Prepare
-  {
-    validation validateOrder;
-    validation validateOrderStatus;
-  }
-
-  mapping for zf2_order
-  {
-    OrderID       = order_id;
-    BookingID     = booking_id;
-    CustomerID    = customer_id;
-    OrderDate     = order_date;
-    OrderStatus   = order_status;
-    NetAmount     = net_amount;
-    TaxAmount     = tax_amount;
-    GrossAmount   = gross_amount;
-    CurrencyCode  = currency_code;
-    LastChangedAt = last_changed_at;
-  }
 }

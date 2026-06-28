@@ -1,5 +1,6 @@
 managed implementation in class zf2_bp_i_booking unique;
 with draft;
+
 define behavior for ZF2_I_Booking alias Booking
 persistent table zf2_booking
 draft table zf2_d_booking

@@ -75,26 +75,26 @@ CLASS zf2_cl_demo_data_generator IMPLEMENTATION.
 
     DATA lt_customers TYPE STANDARD TABLE OF zf2_customer.
     lt_customers = VALUE #(
-      ( client = sy-mandt customer_id = '0000001001' first_name = 'Sofia'  last_name = 'Martin' 
-        email_address = 'sofia.martin@example.com'  phone_number = '+33155501001' country = 'FR' language = 'F' vip = abap_true 
+      ( client = sy-mandt customer_id = '0000001001' first_name = 'Sofia'  last_name = 'Martin'
+        email_address = 'sofia.martin@example.com'  phone_number = '+33155501001' country = 'FR' language = 'F' vip = abap_true
         created_by = lv_user created_at = lv_timestamp last_changed_by = lv_user last_changed_at = lv_timestamp )
-      ( client = sy-mandt customer_id = '0000001002' first_name = 'Jonas'  last_name = 'Becker' 
+      ( client = sy-mandt customer_id = '0000001002' first_name = 'Jonas'  last_name = 'Becker'
         email_address = 'jonas.becker@example.com'  phone_number = '+496955501002' country = 'DE' language = 'D' vip = abap_false
         created_by = lv_user created_at = lv_timestamp last_changed_by = lv_user last_changed_at = lv_timestamp )
-      ( client = sy-mandt customer_id = '0000001003' first_name = 'Emma'   last_name = 'Wilson' 
-        email_address = 'emma.wilson@example.com'   phone_number = '+442055501003' country = 'GB' language = 'E' vip = abap_true 
+      ( client = sy-mandt customer_id = '0000001003' first_name = 'Emma'   last_name = 'Wilson'
+        email_address = 'emma.wilson@example.com'   phone_number = '+442055501003' country = 'GB' language = 'E' vip = abap_true
         created_by = lv_user created_at = lv_timestamp last_changed_by = lv_user last_changed_at = lv_timestamp )
-      ( client = sy-mandt customer_id = '0000001004' first_name = 'Noah'   last_name = 'Carter' 
+      ( client = sy-mandt customer_id = '0000001004' first_name = 'Noah'   last_name = 'Carter'
         email_address = 'noah.carter@example.com'   phone_number = '+131255501004' country = 'US' language = 'E' vip = abap_false
         created_by = lv_user created_at = lv_timestamp last_changed_by = lv_user last_changed_at = lv_timestamp )
-      ( client = sy-mandt customer_id = '0000001005' first_name = 'Aisha'  last_name = 'Rahman' 
-        email_address = 'aisha.rahman@example.com'  phone_number = '+65655501005'  country = 'SG' language = 'E' vip = abap_true 
+      ( client = sy-mandt customer_id = '0000001005' first_name = 'Aisha'  last_name = 'Rahman'
+        email_address = 'aisha.rahman@example.com'  phone_number = '+65655501005'  country = 'SG' language = 'E' vip = abap_true
         created_by = lv_user created_at = lv_timestamp last_changed_by = lv_user last_changed_at = lv_timestamp ) ).
     INSERT zf2_customer FROM TABLE @lt_customers.
 
     DATA lt_bookings TYPE STANDARD TABLE OF zf2_booking.
     lt_bookings = VALUE #(
-      ( client = sy-mandt booking_id = '0000005001' customer_id = '0000001001' carrier_id = 'LH' connection_id = '0400' flight_date = lv_today + 7 
+      ( client = sy-mandt booking_id = '0000005001' customer_id = '0000001001' carrier_id = 'LH' connection_id = '0400' flight_date = lv_today + 7
         booking_date = lv_today - 10 booking_status = 'CONFIRMED' seat_class = 'BUS'
         base_amount = '780.00'  tax_amount = '156.00' total_amount = '936.00'  currency_code = 'EUR' local_last_changed_at = lv_timestamp last_changed_at = lv_timestamp )
       ( client = sy-mandt booking_id = '0000005002' customer_id = '0000001002' carrier_id = 'LH' connection_id = '0401' flight_date = lv_today + 14
@@ -103,7 +103,7 @@ CLASS zf2_cl_demo_data_generator IMPLEMENTATION.
       ( client = sy-mandt booking_id = '0000005003' customer_id = '0000001003' carrier_id = 'BA' connection_id = '0701' flight_date = lv_today + 10
         booking_date = lv_today - 6  booking_status = 'CONFIRMED' seat_class = 'ECO'
         base_amount = '160.00'  tax_amount = '32.00'  total_amount = '192.00'  currency_code = 'GBP' local_last_changed_at = lv_timestamp last_changed_at = lv_timestamp )
-      ( client = sy-mandt booking_id = '0000005004' customer_id = '0000001004' carrier_id = 'UA' connection_id = '0900' flight_date = lv_today + 5 
+      ( client = sy-mandt booking_id = '0000005004' customer_id = '0000001004' carrier_id = 'UA' connection_id = '0900' flight_date = lv_today + 5
         booking_date = lv_today - 20 booking_status = 'CANCELLED' seat_class = 'ECO'
         base_amount = '320.00'  tax_amount = '64.00'  total_amount = '384.00'  currency_code = 'USD'
         cancel_reason = 'Customer requested cancellation' local_last_changed_at = lv_timestamp last_changed_at = lv_timestamp )
@@ -118,7 +118,7 @@ CLASS zf2_cl_demo_data_generator IMPLEMENTATION.
         order_date = lv_today - 9 order_status = 'RELEASED' net_amount = '780.00'  tax_amount = '156.00'
         gross_amount = '936.00'  currency_code = 'EUR' last_changed_at = lv_timestamp )
       ( client = sy-mandt order_id = '0000007002' booking_id = '0000005003' customer_id = '0000001003'
-        order_date = lv_today - 5 order_status = 'NEW'      net_amount = '160.00'  tax_amount = '32.00' 
+        order_date = lv_today - 5 order_status = 'NEW'      net_amount = '160.00'  tax_amount = '32.00'
         gross_amount = '192.00'  currency_code = 'GBP' last_changed_at = lv_timestamp )
       ( client = sy-mandt order_id = '0000007003' booking_id = '0000005005' customer_id = '0000001005'
         order_date = lv_today - 1 order_status = 'RELEASED' net_amount = '1250.00' tax_amount = '250.00'
@@ -143,7 +143,7 @@ CLASS zf2_cl_demo_data_generator IMPLEMENTATION.
 
     DATA lt_payments TYPE STANDARD TABLE OF zf2_payment.
     lt_payments = VALUE #(
-      ( client = sy-mandt payment_id = '0000011001' invoice_id = '0000009001' payment_date = lv_today - 7 amount = '936.00' currency_code = 'EUR' payment_method = 'CARD' reference = 'VISA-936-5001' last_changed_at = lv_timestamp ) ).
+      ( client = sy-mandt payment_id = '0000011001' invoice_id = '0000009001' payment_date = lv_today - 7 amount = '936.00' currency_code = 'EUR' payment_method = 'CARD' reference = 'VISA-936-5001' ) ).
     INSERT zf2_payment FROM TABLE @lt_payments.
 
     DATA lt_status_history TYPE STANDARD TABLE OF zf2_status_hist.
