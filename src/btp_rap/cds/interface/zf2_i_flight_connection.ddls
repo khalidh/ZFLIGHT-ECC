@@ -1,6 +1,6 @@
 @EndUserText.label: 'Flight Connection'
 @AccessControl.authorizationCheck: #NOT_REQUIRED
-define view entity ZF2_I_FLIGHT_CONNECTION
+define root view entity ZF2_I_FLIGHT_CONNECTION
   as select from zf2_connection
 {
   key carrier_id as CarrierID,

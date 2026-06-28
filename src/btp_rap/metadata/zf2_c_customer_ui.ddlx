@@ -1,26 +1,40 @@
 @Metadata.layer: #CORE
+@UI.createHidden: false
 annotate view ZF2_C_Customer with {
   @UI.facet: [
     { id: 'Customer', purpose: #STANDARD, type: #IDENTIFICATION_REFERENCE, label: 'Customer', position: 10 }
   ]
-  @UI.identification: [{ position: 10 }]
-  @UI.lineItem: [{ position: 10 }]
+  @UI.identification: [{ position: 10, label: 'Customer' }]
+  @UI.lineItem: [{ position: 10, label: 'Customer' }]
   @UI.selectionField: [{ position: 10 }]
   CustomerID;
 
-  @UI.identification: [{ position: 20 }]
-  @UI.lineItem: [{ position: 20 }]
-  LastName;
-
-  @UI.identification: [{ position: 30 }]
-  @UI.lineItem: [{ position: 30 }]
+  @UI.identification: [{ position: 20, label: 'First Name' }]
+  @UI.lineItem: [{ position: 20, label: 'First Name' }]
   FirstName;
 
-  @UI.identification: [{ position: 40 }]
-  @UI.lineItem: [{ position: 40 }]
+  @UI.identification: [{ position: 30, label: 'Last Name' }]
+  @UI.lineItem: [{ position: 30, label: 'Last Name' }]
+  @UI.selectionField: [{ position: 20 }]
+  LastName;
+
+  @UI.identification: [{ position: 40, label: 'Email' }]
+  @UI.lineItem: [{ position: 40, label: 'Email' }]
   EmailAddress;
 
-  @UI.identification: [{ position: 50 }]
-  @UI.lineItem: [{ position: 50 }]
+  @UI.identification: [{ position: 50, label: 'Phone' }]
+  PhoneNumber;
+
+  @UI.identification: [{ position: 60, label: 'Country' }]
+  @UI.lineItem: [{ position: 50, label: 'Country' }]
+  @UI.selectionField: [{ position: 30 }]
+  Country;
+
+  @UI.identification: [{ position: 70, label: 'Language' }]
+  Language;
+
+  @UI.identification: [{ position: 80, label: 'VIP' }]
+  @UI.lineItem: [{ position: 60, label: 'VIP' }]
+  @UI.selectionField: [{ position: 40 }]
   Vip;
 }

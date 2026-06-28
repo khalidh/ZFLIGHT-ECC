@@ -1,0 +1,3 @@
+carrier_carrierID;connectionID;countryFrom;cityFrom;airportFrom;countryTo;cityTo;airportTo;flightTime;departureTime;arrivalTime;distance;distanceUnit
+LH;0400;DE;Frankfurt;FRA;US;New York;JFK;480;10:10:00;13:10:00;6200.00;KM
+AF;0701;FR;Paris;CDG;JP;Tokyo;HND;780;23:20:00;19:10:00;9710.00;KM

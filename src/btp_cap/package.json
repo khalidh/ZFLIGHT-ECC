@@ -1,0 +1,29 @@
+{
+  "name": "zflight-cap",
+  "version": "0.1.0",
+  "description": "SAP CAP target for the ZFLIGHT ECC migration.",
+  "private": true,
+  "scripts": {
+    "start": "cds-serve",
+    "deploy:sqlite": "cds-deploy",
+    "load:test-data": "node scripts/load-test-data.js",
+    "test": "node --test"
+  },
+  "dependencies": {
+    "@sap/cds": "^8",
+    "express": "^4"
+  },
+  "devDependencies": {
+    "@cap-js/sqlite": "^1"
+  },
+  "cds": {
+    "requires": {
+      "db": {
+        "kind": "sqlite",
+        "credentials": {
+          "url": "db.sqlite"
+        }
+      }
+    }
+  }
+}

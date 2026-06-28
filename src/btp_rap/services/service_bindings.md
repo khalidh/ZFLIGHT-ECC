@@ -38,6 +38,13 @@ Expected exposed entities:
 - `Flights`
 - `Customers`
 
+Expected standard operations:
+
+- `Carriers`: create/update/delete
+- `Connections`: create/update/delete
+- `Flights`: create/update/delete
+- `Customers`: create/update/delete
+
 ### Booking Management UI
 
 - Name: `ZF2_UI_BOOKING_MANAGE_O4`
@@ -53,6 +60,13 @@ Expected exposed entities:
 - `OrderItems`
 - `Invoices`
 - `Payments`
+
+Expected standard operations:
+
+- `Bookings`: create/update/delete
+- `Orders`: create/update/delete
+- `Invoices`: create/update/delete
+- `Payments`: create/update/delete
 
 Expected actions:
 

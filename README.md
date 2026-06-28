@@ -17,12 +17,14 @@ Le livrable est volontairement oriente ECC 6.0 / NetWeaver AS ABAP classique: DD
 - [docs/09_audit_migration_btp.md](docs/09_audit_migration_btp.md)
 - [docs/10_import_abapgit.md](docs/10_import_abapgit.md)
 - [src/abap/ddic/ZFLIGHT_DDIC_SPEC.md](src/abap/ddic/ZFLIGHT_DDIC_SPEC.md)
+- [docs/12_migration_btp_cap.md](docs/12_migration_btp_cap.md)
 - [src/abap/classes/](src/abap/classes)
 - [src/abap/function_groups/](src/abap/function_groups)
 - [src/abap/reports/](src/abap/reports)
 - [src/abap/module_pool/](src/abap/module_pool)
 - [src/abap/security/](src/abap/security)
 - [src/btp_rap/](src/btp_rap) - objets cibles SAP BTP RAP/OData V4
+- [src/btp_cap/](src/btp_cap) - cible SAP CAP/OData V4
 
 ## Ordre de creation recommande
 
@@ -37,3 +39,7 @@ Le livrable est volontairement oriente ECC 6.0 / NetWeaver AS ABAP classique: DD
 ## Migration BTP RAP/OData
 
 Les objets cibles RAP/OData sont generes dans [src/btp_rap/](src/btp_rap). Ils forment une pile separee de la version ECC: tables persistantes ABAP Cloud, CDS interface/projection, behavior definitions, services OData V4, metadata extensions, DCL/IAM, classes helper et tests.
+
+## Migration BTP CAP/OData
+
+Les objets cibles CAP/OData sont generes dans [src/btp_cap/](src/btp_cap). Ils forment une pile Node.js CAP separee de la version ECC et de la cible RAP: modele CDS CAP, service OData V4, handlers JavaScript pour les operations metier, donnees de demo SQLite et tests.

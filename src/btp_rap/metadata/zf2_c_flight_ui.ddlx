@@ -24,9 +24,22 @@ annotate view ZF2_C_Flight with {
 
   @UI.identification: [{ position: 50 }]
   @UI.lineItem: [{ position: 50 }]
-  SeatsOccupied;
+  CurrencyCode;
 
   @UI.identification: [{ position: 60 }]
   @UI.lineItem: [{ position: 60 }]
+  PlaneType;
+
+  @UI.identification: [{ position: 70 }]
+  @UI.lineItem: [{ position: 70 }]
+  SeatsOccupied;
+
+  @UI.identification: [{ position: 80 }]
+  @UI.lineItem: [{ position: 80 }]
   SeatsMax;
+
+  @UI.identification: [{ position: 90 }]
+  @UI.lineItem: [{ position: 90 }]
+  @UI.selectionField: [{ position: 40 }]
+  FlightStatus;
 }

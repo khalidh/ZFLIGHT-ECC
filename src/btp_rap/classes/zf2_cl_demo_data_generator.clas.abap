@@ -60,17 +60,17 @@ CLASS zf2_cl_demo_data_generator IMPLEMENTATION.
     DATA lt_flights TYPE STANDARD TABLE OF zf2_flight.
     lt_flights = VALUE #(
       ( client = sy-mandt carrier_id = 'LH' connection_id = '0400' flight_date = lv_today + 7  price = '780.00'  currency_code = 'EUR'
-        plane_type = 'A350' seats_max = 280 seats_occupied = 142 flight_status = 'SCHEDULED' local_last_changed_at = lv_timestamp last_changed_at = lv_timestamp )
+        plane_type = 'A350' seats_max = 280 seats_occupied = 142 flight_status = 'OPEN' local_last_changed_at = lv_timestamp last_changed_at = lv_timestamp )
       ( client = sy-mandt carrier_id = 'LH' connection_id = '0401' flight_date = lv_today + 14 price = '180.00'  currency_code = 'EUR'
-        plane_type = 'A320' seats_max = 180 seats_occupied = 96  flight_status = 'SCHEDULED' local_last_changed_at = lv_timestamp last_changed_at = lv_timestamp )
+        plane_type = 'A320' seats_max = 180 seats_occupied = 96  flight_status = 'OPEN' local_last_changed_at = lv_timestamp last_changed_at = lv_timestamp )
       ( client = sy-mandt carrier_id = 'AF' connection_id = '0188' flight_date = lv_today + 21 price = '720.00'  currency_code = 'EUR'
-        plane_type = 'B789' seats_max = 250 seats_occupied = 201 flight_status = 'SCHEDULED' local_last_changed_at = lv_timestamp last_changed_at = lv_timestamp )
+        plane_type = 'B789' seats_max = 250 seats_occupied = 201 flight_status = 'OPEN' local_last_changed_at = lv_timestamp last_changed_at = lv_timestamp )
       ( client = sy-mandt carrier_id = 'BA' connection_id = '0701' flight_date = lv_today + 10 price = '160.00'  currency_code = 'GBP'
-        plane_type = 'A320' seats_max = 170 seats_occupied = 118 flight_status = 'SCHEDULED' local_last_changed_at = lv_timestamp last_changed_at = lv_timestamp )
+        plane_type = 'A320' seats_max = 170 seats_occupied = 118 flight_status = 'OPEN' local_last_changed_at = lv_timestamp last_changed_at = lv_timestamp )
       ( client = sy-mandt carrier_id = 'UA' connection_id = '0900' flight_date = lv_today + 5  price = '320.00'  currency_code = 'USD'
         plane_type = 'B738' seats_max = 166 seats_occupied = 151 flight_status = 'BOARDING'  local_last_changed_at = lv_timestamp last_changed_at = lv_timestamp )
       ( client = sy-mandt carrier_id = 'SQ' connection_id = '0326' flight_date = lv_today + 30 price = '1250.00' currency_code = 'SGD'
-        plane_type = 'A380' seats_max = 470 seats_occupied = 318 flight_status = 'SCHEDULED' local_last_changed_at = lv_timestamp last_changed_at = lv_timestamp ) ).
+        plane_type = 'A380' seats_max = 470 seats_occupied = 318 flight_status = 'OPEN' local_last_changed_at = lv_timestamp last_changed_at = lv_timestamp ) ).
     INSERT zf2_flight FROM TABLE @lt_flights.
 
     DATA lt_customers TYPE STANDARD TABLE OF zf2_customer.
