@@ -152,6 +152,67 @@ etag master LastChangedAt
 
 Ajouter les determinations, validations et actions seulement si les methodes correspondantes sont implementees et testees.
 
+### Draft Fiori Elements Create/Edit
+
+Pour les entites transactionnelles draft-enabled, Fiori Elements V4 ne s'appuie pas seulement sur les operations CRUD classiques. Les boutons standard dependent aussi des actions draft publiees dans le `$metadata`.
+
+Exemple attendu pour l'interface Booking :
+
+```abap
+managed implementation in class zf2_bp_i_booking unique;
+with draft;
+define behavior for ZF2_I_Booking alias Booking
+persistent table zf2_booking
+draft table zf2_d_booking
+lock master total etag LastChangedAt
+etag master LastChangedAt
+{
+  create;
+  update;
+  delete;
+
+  draft action Edit;
+  draft action Activate;
+  draft action Discard;
+  draft action Resume;
+  draft determine action Prepare;
+}
+```
+
+Exemple attendu pour la projection Booking :
+
+```abap
+projection;
+use draft;
+define behavior for ZF2_C_Booking alias Booking
+{
+  use create;
+  use update;
+  use delete;
+  use action Edit;
+  use action Activate;
+  use action Discard;
+  use action Resume;
+  use action Prepare;
+}
+```
+
+Apres activation et republication de `ZF2_UI_BOOKING_MANAGE_O4`, le `$metadata` doit contenir `Common.DraftRoot` pour `Bookings`, avec au minimum `NewAction`, `EditAction`, `ActivationAction`, `DiscardAction` et `PreparationAction`.
+
+Si le preview affiche `Supprimer` mais pas `Creer` :
+
+| Ordre | Verification | Resultat attendu |
+|---:|---|---|
+| 1 | `ZF2_D_BOOKING` existe et est active | La persistance draft est disponible |
+| 2 | `ZF2_I_BOOKING` contient `with draft;`, `draft table`, `create`, `update`, `delete` | L'interface behavior est complete |
+| 3 | `ZF2_C_BOOKING` contient `use draft;`, `use create`, `use update`, `use delete` | La projection expose le draft CRUD |
+| 4 | `ZF2_C_BOOKING` CDS contient `provider contract transactional_query` | La projection est transactionnelle |
+| 5 | `ZF2_UI_BOOKING_MANAGE_O4` est republished | Le metadata publie est a jour |
+| 6 | `$metadata` contient `Common.DraftRoot/NewAction` pour `Bookings` | Fiori peut afficher `Creer` |
+| 7 | `$metadata` contient `Common.DraftRoot/EditAction` pour `Bookings` | Fiori peut afficher `Modifier` sur la page objet |
+
+Note : `Modifier` n'apparait pas forcement dans la toolbar du List Report. Pour le tester, charger des donnees, ouvrir une ligne, puis verifier le bouton `Edit` sur l'Object Page.
+
 ### Metadata Extension Avec Detail Fiori
 
 Si un facet utilise `#IDENTIFICATION_REFERENCE`, chaque champ a afficher en detail doit avoir `@UI.identification`.
@@ -344,6 +405,25 @@ Action :
 2. Relancer `Preview...` depuis le service binding.
 3. Faire `Ctrl + Shift + R`.
 4. Tester en navigation privee si le cache Chrome garde un etat ancien.
+
+### Preview Affiche Supprimer Mais Pas Creer Ou Modifier
+
+Cause probable :
+
+- comportement draft incomplet dans le service publie,
+- table draft manquante ou inactive,
+- projection behavior non reactivee apres ajout de `use draft`,
+- service binding non republished,
+- ancien metadata conserve par le preview ou le navigateur.
+
+Action :
+
+1. Verifier que `ZF2_D_BOOKING` existe et est active.
+2. Reactiver `ZF2_I_BOOKING`, puis `ZF2_C_BOOKING`.
+3. Reactiver `ZF2_UI_BOOKING_MANAGE`.
+4. Republish `ZF2_UI_BOOKING_MANAGE_O4`.
+5. Chercher `Common.DraftRoot`, `NewAction` et `EditAction` dans le `$metadata`.
+6. Relancer le preview depuis le binding et tester aussi en navigation privee si necessaire.
 
 ## Strategie De Test
 

@@ -20,6 +20,9 @@
 - Publish `ZF2_UI_FLIGHT_MANAGE_O4`.
 - Open preview for `Flights`.
 - Publish `ZF2_UI_BOOKING_MANAGE_O4`.
+- Check `$metadata` for `Bookings` draft markers: `Common.DraftRoot`, `NewAction`, `EditAction`, `ActivationAction`, `DiscardAction`, and `PreparationAction`.
+- In the `Bookings` preview, confirm that `Create` is available from the list report.
+- Open an existing booking and confirm that `Edit` is available on the object page.
 - Execute `confirmBooking` and `createOrder`.
 - Publish `ZF2_API_FLIGHT_BOOKING_O4`.
 - Test read-only external API access with communication arrangement.
