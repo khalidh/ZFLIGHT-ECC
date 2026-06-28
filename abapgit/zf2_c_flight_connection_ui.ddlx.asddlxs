@@ -1,0 +1,54 @@
+@Metadata.layer: #CORE
+annotate view ZF2_C_FLIGHT_CONNECTION with {
+  @UI.facet: [
+    { id: 'Connection', purpose: #STANDARD, type: #IDENTIFICATION_REFERENCE, label: 'Connection', position: 10 }
+  ]
+  @UI.identification: [{ position: 10, label: 'Carrier' }]
+  @UI.lineItem: [{ position: 10, label: 'Carrier' }]
+  @UI.selectionField: [{ position: 10 }]
+  CarrierID;
+
+  @UI.identification: [{ position: 20, label: 'Connection' }]
+  @UI.lineItem: [{ position: 20, label: 'Connection' }]
+  @UI.selectionField: [{ position: 20 }]
+  ConnectionID;
+
+  @UI.identification: [{ position: 30, label: 'Country From' }]
+  CountryFrom;
+
+  @UI.identification: [{ position: 40, label: 'City From' }]
+  @UI.lineItem: [{ position: 30, label: 'City From' }]
+  @UI.selectionField: [{ position: 30 }]
+  CityFrom;
+
+  @UI.identification: [{ position: 50, label: 'Airport From' }]
+  AirportFrom;
+
+  @UI.identification: [{ position: 60, label: 'Country To' }]
+  CountryTo;
+
+  @UI.identification: [{ position: 70, label: 'City To' }]
+  @UI.lineItem: [{ position: 40, label: 'City To' }]
+  @UI.selectionField: [{ position: 40 }]
+  CityTo;
+
+  @UI.identification: [{ position: 80, label: 'Airport To' }]
+  AirportTo;
+
+  @UI.identification: [{ position: 90, label: 'Flight Time' }]
+  @UI.lineItem: [{ position: 50, label: 'Flight Time' }]
+  FlightTime;
+
+  @UI.identification: [{ position: 100, label: 'Departure' }]
+  DepartureTime;
+
+  @UI.identification: [{ position: 110, label: 'Arrival' }]
+  ArrivalTime;
+
+  @UI.identification: [{ position: 120, label: 'Distance' }]
+  @UI.lineItem: [{ position: 60, label: 'Distance' }]
+  Distance;
+
+  @UI.identification: [{ position: 130, label: 'Distance Unit' }]
+  DistanceUnit;
+}

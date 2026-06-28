@@ -1,0 +1,26 @@
+managed implementation in class zf2_bp_i_flight_connection unique;
+define behavior for ZF2_I_FLIGHT_CONNECTION alias Connection
+persistent table zf2_connection
+lock master
+{
+  create;
+  update;
+  delete;
+
+  mapping for zf2_connection
+  {
+    CarrierID      = carrier_id;
+    ConnectionID   = connection_id;
+    CountryFrom    = country_from;
+    CityFrom       = city_from;
+    AirportFrom    = airport_from;
+    CountryTo      = country_to;
+    CityTo         = city_to;
+    AirportTo      = airport_to;
+    FlightTime     = flight_time;
+    DepartureTime  = departure_time;
+    ArrivalTime    = arrival_time;
+    Distance       = distance;
+    DistanceUnit   = distance_unit;
+  }
+}
