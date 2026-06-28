@@ -10,5 +10,6 @@ define root view entity ZF2_I_Payment
       amount as Amount,
       currency_code as CurrencyCode,
       payment_method as PaymentMethod,
-      reference as Reference
+      reference as Reference,
+      last_changed_at as LastChangedAt
 }

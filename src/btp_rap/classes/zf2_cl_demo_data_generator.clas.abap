@@ -143,7 +143,7 @@ CLASS zf2_cl_demo_data_generator IMPLEMENTATION.
 
     DATA lt_payments TYPE STANDARD TABLE OF zf2_payment.
     lt_payments = VALUE #(
-      ( client = sy-mandt payment_id = '0000011001' invoice_id = '0000009001' payment_date = lv_today - 7 amount = '936.00' currency_code = 'EUR' payment_method = 'CARD' reference = 'VISA-936-5001' ) ).
+      ( client = sy-mandt payment_id = '0000011001' invoice_id = '0000009001' payment_date = lv_today - 7 amount = '936.00' currency_code = 'EUR' payment_method = 'CARD' reference = 'VISA-936-5001' last_changed_at = lv_timestamp ) ).
     INSERT zf2_payment FROM TABLE @lt_payments.
 
     DATA lt_status_history TYPE STANDARD TABLE OF zf2_status_hist.

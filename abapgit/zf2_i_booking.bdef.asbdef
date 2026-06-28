@@ -1,14 +1,34 @@
 managed implementation in class zf2_bp_i_booking unique;
+with draft;
 define behavior for ZF2_I_Booking alias Booking
 persistent table zf2_booking
-lock master
+draft table zf2_d_booking
+lock master total etag LastChangedAt
 etag master LastChangedAt
 {
   create;
   update;
   delete;
 
-  field ( readonly ) LastChangedAt, LocalLastChangedAt;
+  field ( readonly ) LastChangedAt, LocalLastChangedAt, TotalAmount, TaxAmount;
+
+  determination setInitialBookingValues on modify { create; }
+  validation validateBooking on save { create; update; }
+  validation validateBookingStatus on save { create; update; field BookingStatus; }
+
+  action confirm result [1] $self;
+  action cancel parameter ZF2_BOOKING_CANCEL_PARAM result [1] $self;
+  action createOrder result [1] $self;
+
+  draft action Edit;
+  draft action Activate;
+  draft action Discard;
+  draft action Resume;
+  draft determine action Prepare
+  {
+    validation validateBooking;
+    validation validateBookingStatus;
+  }
 
   mapping for zf2_booking
   {

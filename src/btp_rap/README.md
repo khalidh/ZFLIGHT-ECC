@@ -79,6 +79,7 @@ Services:
 
 Behavior actions:
 
+- `ZF2_I_Booking`, `ZF2_I_Order`, `ZF2_I_Invoice`, and `ZF2_I_Payment` are draft-enabled for Fiori Elements create/edit flows.
 - `ZF2_I_FLIGHT_CARRIER`: create/update/delete
 - `ZF2_I_FLIGHT_CONNECTION`: create/update/delete
 - `ZF2_I_Booking`: `confirm`, `cancel`, `createOrder`

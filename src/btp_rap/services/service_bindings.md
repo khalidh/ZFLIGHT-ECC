@@ -21,6 +21,27 @@ Create the bindings directly in Eclipse ADT:
 5. Activate the binding.
 6. Open the binding and click `Publish`.
 
+## Draft Activation Notes
+
+The booking service is draft-enabled for the transactional entities:
+
+- `ZF2_I_Booking` uses draft table `ZF2_D_BOOKING`.
+- `ZF2_I_Order` uses draft table `ZF2_D_ORDER`.
+- `ZF2_I_Invoice` uses draft table `ZF2_D_INVOICE`.
+- `ZF2_I_Payment` uses draft table `ZF2_D_PAYMENT`.
+
+On the first activation, ADT can report that a draft table does not exist. Use the ADT Quick Fix on the behavior definition to generate the missing draft table, then activate in this order:
+
+1. Active tables, including `ZF2_PAYMENT` after adding `LAST_CHANGED_AT`.
+2. Interface CDS.
+3. Projection CDS.
+4. Interface behavior definitions.
+5. Projection behavior definitions.
+6. Service definitions.
+7. Service bindings, then publish again.
+
+After publishing `ZF2_UI_BOOKING_MANAGE_O4`, its `$metadata` should contain `DraftRoot` for `Bookings`, `Orders`, `Invoices`, and `Payments`.
+
 ## Bindings To Create
 
 ### Flight Management UI
@@ -63,10 +84,10 @@ Expected exposed entities:
 
 Expected standard operations:
 
-- `Bookings`: create/update/delete
-- `Orders`: create/update/delete
-- `Invoices`: create/update/delete
-- `Payments`: create/update/delete
+- `Bookings`: draft create/update/delete
+- `Orders`: draft create/update/delete
+- `Invoices`: draft create/update/delete
+- `Payments`: draft create/update/delete
 
 Expected actions:
 

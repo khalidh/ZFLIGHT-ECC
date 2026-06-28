@@ -1,7 +1,9 @@
 managed implementation in class zf2_bp_i_invoice unique;
+with draft;
 define behavior for ZF2_I_Invoice alias Invoice
 persistent table zf2_invoice
-lock master
+draft table zf2_d_invoice
+lock master total etag LastChangedAt
 etag master LastChangedAt
 {
   create;
@@ -16,6 +18,16 @@ etag master LastChangedAt
 
   action registerPayment parameter ZF2_PAYMENT_INPUT result [1] $self;
   action cancel result [1] $self;
+
+  draft action Edit;
+  draft action Activate;
+  draft action Discard;
+  draft action Resume;
+  draft determine action Prepare
+  {
+    validation validateInvoice;
+    validation validateInvoiceStatus;
+  }
 
   mapping for zf2_invoice
   {

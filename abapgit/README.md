@@ -6,6 +6,17 @@ The repository root `.abapgit.xml` sets `STARTING_FOLDER` to `/abapgit/` and `FO
 
 Import order is still governed by activation dependencies: DDLS tables, CDS interface/projection, behavior definitions, services, metadata, DCL and classes.
 
+## RAP draft notes
+
+The booking management RAP objects are draft-enabled for:
+
+- `ZF2_I_Booking` with draft table `ZF2_D_BOOKING`
+- `ZF2_I_Order` with draft table `ZF2_D_ORDER`
+- `ZF2_I_Invoice` with draft table `ZF2_D_INVOICE`
+- `ZF2_I_Payment` with draft table `ZF2_D_PAYMENT`
+
+If ADT reports that a draft table is missing while activating a behavior definition, use the ADT Quick Fix to generate the draft table, then activate the behavior again. Republish `ZF2_UI_BOOKING_MANAGE_O4` after the draft behavior definitions are active.
+
 ## Booking API smoke test
 
 After importing and activating the objects in ADT, publish or refresh the service binding
