@@ -15,13 +15,39 @@ annotate view ZF2_C_Booking with {
 
   @UI.identification: [{ position: 30, label: 'Flight Date' }]
   @UI.lineItem: [{ position: 30 }]
+  @UI.selectionField: [{ position: 40 }]
   FlightDate;
 
   @UI.identification: [{ position: 40, label: 'Booking Status' }]
   @UI.lineItem: [{ position: 40 }]
+  @UI.selectionField: [{ position: 20 }]
   BookingStatus;
 
-  @UI.identification: [{ position: 50, label: 'Total Amount' }]
+  @UI.identification: [{ position: 50, label: 'Seat Class' }]
   @UI.lineItem: [{ position: 50 }]
+  @UI.selectionField: [{ position: 30 }]
+  SeatClass;
+
+  @UI.identification: [{ position: 60, label: 'Booking Date' }]
+  @UI.lineItem: [{ position: 60 }]
+  BookingDate;
+
+  @UI.identification: [{ position: 70, label: 'Base Amount' }]
+  @UI.lineItem: [{ position: 70 }]
+  BaseAmount;
+
+  @UI.identification: [{ position: 80, label: 'Tax Amount' }]
+  @UI.lineItem: [{ position: 80 }]
+  TaxAmount;
+
+  @UI.identification: [{ position: 90, label: 'Total Amount' }]
+  @UI.lineItem: [{ position: 90 }]
   TotalAmount;
+
+  @UI.identification: [{ position: 100, label: 'Currency' }]
+  @UI.lineItem: [{ position: 100 }]
+  CurrencyCode;
+
+  @UI.identification: [{ position: 110, label: 'Cancel Reason' }]
+  CancelReason;
 }

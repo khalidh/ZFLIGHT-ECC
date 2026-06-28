@@ -1,0 +1,24 @@
+@Metadata.layer: #CORE
+annotate view ZF2_C_FLIGHT_CARRIER with {
+  @UI.facet: [
+    { id: 'Carrier', purpose: #STANDARD, type: #IDENTIFICATION_REFERENCE, label: 'Carrier', position: 10 }
+  ]
+  @UI.identification: [{ position: 10, label: 'Carrier' }]
+  @UI.lineItem: [{ position: 10, label: 'Carrier' }]
+  @UI.selectionField: [{ position: 10 }]
+  CarrierID;
+
+  @UI.identification: [{ position: 20, label: 'Name' }]
+  @UI.lineItem: [{ position: 20, label: 'Name' }]
+  @UI.selectionField: [{ position: 20 }]
+  CarrierName;
+
+  @UI.identification: [{ position: 30, label: 'Currency' }]
+  @UI.lineItem: [{ position: 30, label: 'Currency' }]
+  @UI.selectionField: [{ position: 30 }]
+  CurrencyCode;
+
+  @UI.identification: [{ position: 40, label: 'URL' }]
+  @UI.lineItem: [{ position: 40, label: 'URL' }]
+  Url;
+}

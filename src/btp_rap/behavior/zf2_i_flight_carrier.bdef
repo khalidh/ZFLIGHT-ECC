@@ -1,0 +1,24 @@
+managed implementation in class zf2_bp_i_flight_carrier unique;
+define behavior for ZF2_I_FLIGHT_CARRIER alias Carrier
+persistent table zf2_carrier
+lock master
+etag master LastChangedAt
+{
+  create;
+  update;
+  delete;
+
+  field ( readonly ) CreatedBy, CreatedAt, LastChangedBy, LastChangedAt;
+
+  mapping for zf2_carrier
+  {
+    CarrierID     = carrier_id;
+    CarrierName   = carrier_name;
+    CurrencyCode  = currency_code;
+    Url           = url;
+    CreatedBy     = created_by;
+    CreatedAt     = created_at;
+    LastChangedBy = last_changed_by;
+    LastChangedAt = last_changed_at;
+  }
+}

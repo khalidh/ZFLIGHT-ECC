@@ -1,0 +1,3 @@
+customerID;firstName;lastName;emailAddress;phoneNumber;country;language;vip
+C000000001;Nadia;Martin;nadia.martin@example.com;+33123456789;FR;FR;true
+C000000002;Jonas;Weber;jonas.weber@example.com;+49691234567;DE;DE;false

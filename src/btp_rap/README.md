@@ -23,9 +23,9 @@ The ECC implementation remains under `src/abap/`. The objects here are RAP-orien
 1. Create package `ZFLIGHT_RAP`.
 2. Create persistent tables from `tables/`.
 3. Create interface CDS views from `cds/interface/`.
-4. Create behavior definitions from `behavior/`.
-5. Create projection CDS views from `cds/projection/`.
-6. Create behavior projections from `behavior/`.
+4. Create projection CDS views from `cds/projection/`.
+5. Create behavior definitions from `behavior/` for `ZF2_I_*`.
+6. Create behavior projections from `behavior/` for `ZF2_C_*`.
 7. Create service definitions and service bindings from `services/`.
 8. Create metadata extensions from `metadata/`.
 9. Create DCL/IAM objects from `auth/`.
@@ -79,7 +79,21 @@ Services:
 
 Behavior actions:
 
+- `ZF2_I_FLIGHT_CARRIER`: create/update/delete
+- `ZF2_I_FLIGHT_CONNECTION`: create/update/delete
 - `ZF2_I_Booking`: `confirm`, `cancel`, `createOrder`
 - `ZF2_I_Order`: `release`, `createInvoice`
 - `ZF2_I_Invoice`: `registerPayment`, `cancel`
 - `ZF2_I_Payment`: create/update/delete with validation
+
+Fiori metadata extensions:
+
+- `ZF2_C_FLIGHT_CARRIER_UI`
+- `ZF2_C_FLIGHT_CONNECTION_UI`
+- `ZF2_C_FLIGHT_UI`
+- `ZF2_C_CUSTOMER_UI`
+- `ZF2_C_BOOKING_UI`
+- `ZF2_C_ORDER_UI`
+- `ZF2_C_ORDER_ITEM_UI`
+- `ZF2_C_INVOICE_UI`
+- `ZF2_C_PAYMENT_UI`
