@@ -2,7 +2,7 @@
 
 ## Package
 
-- Package recommande: `ZFLIGHT-ECC2`.
+- Package recommande: `ZFLIGHT-ECC3`.
 - Transportable, couche logicielle locale client.
 
 ## Inventaire des sources generees

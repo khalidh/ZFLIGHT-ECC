@@ -18,9 +18,12 @@ https://github.com/khalidh/ZFLIGHT-ECC.git
 
 ## Parametres abapGit
 
-- Package cible: `ZFLIGHT-ECC2`.
+- Package cible: `ZFLIGHT-ECC3`.
 - Branch: `refs/heads/main`.
 - Folder logic: `FULL`.
+
+Pour repartir proprement, creer une nouvelle entree abapGit sur un package vierge `ZFLIGHT-ECC3`.
+Ne pas reutiliser l'entree locale abapGit qui pointe encore sur `ZFLIGHT-ECC2`.
 
 ## Ordre d'activation attendu
 
@@ -48,13 +51,6 @@ Si ADT affiche l'erreur `Gerez et sauvegardez les options techniques pour ZF2_*`
 - Buffering: `Not allowed` / `N`.
 
 Cette correction peut apparaitre table par table pendant l'activation (`ZF2_BOOKING`, puis `ZF2_CARRIER`, etc.) lorsque des objets ont deja ete crees partiellement dans le systeme. Si le package ne contient pas de travail local a conserver, le plus propre est de supprimer les objets `ZFL_*` et `ZF2_*` inactifs puis de refaire un pull abapGit depuis GitHub.
-
-Les behavior definitions actuelles utilisent `with draft` et referencent des draft tables `zfl_d_*`.
-
-Si l'activation bloque sur ces objets, il faut soit:
-
-- generer les draft tables dans ADT/BTP avec la structure attendue par RAP;
-- ou retirer temporairement le draft des behavior definitions pour une premiere activation technique.
 
 Le dossier `abapgit/` rend les objets detectables par abapGit. Il ne garantit pas que toutes les dependances fonctionnelles RAP soient deja completes.
 

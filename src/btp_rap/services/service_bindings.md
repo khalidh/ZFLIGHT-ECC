@@ -14,7 +14,7 @@ After publishing, assign the UI services to an IAM app and business catalog.
 
 Create the bindings directly in Eclipse ADT:
 
-1. Right-click package `ZFLIGHT-ECC2`.
+1. Right-click package `ZFLIGHT-ECC3`.
 2. Choose `New` > `Other ABAP Repository Object`.
 3. Search `Service Binding`.
 4. Create each binding listed below.
