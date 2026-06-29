@@ -7,8 +7,8 @@ define root view entity ZF2_C_Booking
 {
   key BookingID,
       CustomerID,
-      FirstName,
-      LastName,
+      _Customer.FirstName as FirstName,
+      _Customer.LastName as LastName,
       CarrierID,
       ConnectionID,
       FlightDate,
