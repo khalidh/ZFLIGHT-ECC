@@ -7,6 +7,8 @@ define root view entity ZF2_C_Booking
 {
   key BookingID,
       CustomerID,
+      FirstName,
+      LastName,
       CarrierID,
       ConnectionID,
       FlightDate,
@@ -18,5 +20,6 @@ define root view entity ZF2_C_Booking
       TotalAmount,
       CurrencyCode,
       CancelReason,
-      LastChangedAt
+      LastChangedAt,
+      _Customer
 }

@@ -2,9 +2,12 @@
 @AccessControl.authorizationCheck: #NOT_REQUIRED
 define root view entity ZF2_I_Booking
   as select from zf2_booking
+  association [0..1] to ZF2_I_Customer as _Customer on $projection.CustomerID = _Customer.CustomerID
 {
   key booking_id as BookingID,
       customer_id as CustomerID,
+      _Customer.FirstName as FirstName,
+      _Customer.LastName as LastName,
       carrier_id as CarrierID,
       connection_id as ConnectionID,
       flight_date as FlightDate,
@@ -20,5 +23,6 @@ define root view entity ZF2_I_Booking
       currency_code as CurrencyCode,
       cancel_reason as CancelReason,
       local_last_changed_at as LocalLastChangedAt,
-      last_changed_at as LastChangedAt
+      last_changed_at as LastChangedAt,
+      _Customer
 }

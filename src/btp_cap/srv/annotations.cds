@@ -160,6 +160,8 @@ annotate service.Bookings with @(
   UI.FieldGroup #General: {
     Data: [
       { $Type: 'UI.DataField', Value: bookingID, Label: 'Booking' },
+      { $Type: 'UI.DataField', Value: customer.firstName, Label: 'First Name' },
+      { $Type: 'UI.DataField', Value: customer.lastName, Label: 'Last Name' },
       { $Type: 'UI.DataField', Value: bookingDate, Label: 'Booking Date' },
       { $Type: 'UI.DataField', Value: bookingStatus, Label: 'Status' },
       { $Type: 'UI.DataField', Value: seatClass, Label: 'Class' },
@@ -176,6 +178,8 @@ annotate service.Bookings with @(
   },
   UI.LineItem: [
     { $Type: 'UI.DataField', Value: bookingID, Label: 'Booking' },
+    { $Type: 'UI.DataField', Value: customer.firstName, Label: 'First Name' },
+    { $Type: 'UI.DataField', Value: customer.lastName, Label: 'Last Name' },
     { $Type: 'UI.DataField', Value: bookingDate, Label: 'Booking Date' },
     { $Type: 'UI.DataField', Value: bookingStatus, Label: 'Status' },
     { $Type: 'UI.DataField', Value: seatClass, Label: 'Class' },
